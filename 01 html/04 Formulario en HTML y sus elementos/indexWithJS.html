@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario en HTML</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        form { max-width: 600px; margin: 20px auto; }
+        label { display: block; margin: 10px 0 5px; }
+        input, select, textarea { width: 100%; padding: 8px; margin-bottom: 10px; }
+        button { padding: 10px 15px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Formulario de Registro</h1>
+    <form id="registro-form">
+        <!-- Campo de Texto -->
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required>
+
+        <!-- Campo de Contraseña -->
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" id="contrasena" name="contrasena" placeholder="Ingresa tu contraseña" required>
+
+        <!-- Campo de Correo Electrónico -->
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" name="email" placeholder="ejemplo@dominio.com" required>
+
+        <!-- Campo de Número -->
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" name="edad" min="0" max="120" step="1" placeholder="Ingresa tu edad">
+
+        <!-- Campo de Teléfono -->
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" name="telefono" placeholder="123-456-7890">
+
+        <!-- Botones de Radio -->
+        <fieldset>
+            <legend>Género:</legend>
+            <label><input type="radio" name="genero" value="masculino"> Masculino</label>
+            <label><input type="radio" name="genero" value="femenino"> Femenino</label>
+            <label><input type="radio" name="genero" value="otro"> Otro</label>
+        </fieldset>
+
+        <!-- Casillas de Verificación -->
+        <label><input type="checkbox" name="suscripcion" value="newsletter"> Suscribirse al boletín</label>
+
+        <!-- Menú Desplegable -->
+        <label for="pais">País:</label>
+        <select id="pais" name="pais">
+            <option value="colombia" selected>Colombia</option>
+            <option value="mexico">México</option>
+            <option value="argentina">Argentina</option>
+        </select>
+
+        <!-- Área de Texto -->
+        <label for="comentarios">Comentarios:</label>
+        <textarea id="comentarios" name="comentarios" rows="4" cols="50" placeholder="Escribe tus comentarios aquí"></textarea>
+
+        <!-- Botón de Envío -->
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        // Obtén el formulario
+        const formulario = document.getElementById('registro-form');
+
+        // Añade un manejador de eventos para el envío del formulario
+        formulario.addEventListener('submit', function(event) {
+            // Previene el envío del formulario para no recargar la página
+            event.preventDefault();
+
+            // Obtiene los datos del formulario
+            const formData = new FormData(formulario);
+
+            // Crea un objeto para almacenar los datos
+            const datos = {};
+
+            // Recorre los datos del formulario y añádelos al objeto
+            formData.forEach((value, key) => {
+                datos[key] = value;
+            });
+
+            // Muestra los datos en la consola
+            console.log('Datos del formulario:', datos);
+        });
+    </script>
+</body>
+</html>

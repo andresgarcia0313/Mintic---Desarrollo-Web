@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Etiquetas Comunes en HTML</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: #333;
+        }
+        ul, ol {
+            margin: 10px 0;
+            padding: 0;
+        }
+        li {
+            margin: 5px 0;
+        }
+        a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .special-character {
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ejemplo de Etiquetas Comunes en HTML</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Títulos</h2>
+            <p>En HTML, los títulos se crean con las etiquetas <code>&lt;h1&gt;</code> a <code>&lt;h6&gt;</code>. La jerarquía de los títulos va desde <code>&lt;h1&gt;</code>, el más importante, hasta <code>&lt;h6&gt;</code>, el menos importante.</p>
+            
+            <h3>Ejemplo de Títulos</h3>
+            <h1>Título Nivel 1</h1>
+            <h2>Título Nivel 2</h2>
+            <h3>Título Nivel 3</h3>
+            <h4>Título Nivel 4</h4>
+            <h5>Título Nivel 5</h5>
+            <h6>Título Nivel 6</h6>
+
+            <p>Los títulos ayudan a estructurar el contenido y son importantes para la accesibilidad y el SEO. Los títulos ayudan a estructurar el contenido y son importantes para la accesibilidad y el SEO.Los títulos ayudan a estructurar el contenido y son importantes para la accesibilidad y el SEO.Los títulos ayudan a estructurar el contenido y son importantes para la accesibilidad y el SEO.Los títulos ayudan a estructurar el contenido y son importantes para la accesibilidad y el SEO.Los títulos ayudan a estructurar el contenido y son importantes para la accesibilidad y el SEO.Los títulos ayudan a estructurar el contenido y son importantes para la accesibilidad y el SEO.Los títulos ayudan a estructurar el contenido y son importantes para la accesibilidad y el SEO.Los títulos ayudan a estructurar el contenido y son importantes para la accesibilidad y el SEO.</p>
+        </section>
+
+        <section>
+            <h2>Párrafos</h2>
+            <p>Los párrafos en HTML se definen con la etiqueta <code>&lt;p&gt;</code>. Los navegadores automáticamente añaden un espacio antes y después de cada párrafo.</p>
+            
+            <p>Esto es un párrafo. Aquí hay <strong>texto en negrita</strong> y <em>texto en cursiva</em>.</p>
+            <p>Los navegadores ignoran múltiples espacios en blanco y saltos de línea.</p>
+        </section>
+
+        <section>
+            <h2>Listas</h2>
+            <h3>Listas Ordenadas</h3>
+            <ol>
+                <li>Primer ítem</li>
+                <li>Segundo ítem</li>
+                <li>Tercer ítem</li>
+            </ol>
+
+            <h3>Listas Desordenadas</h3>
+            <ul>
+                <li>Primer ítem</li>
+                <li>Segundo ítem
+                    <ul>
+                        <li>Sub-ítem 1</li>
+                        <li>Sub-ítem 2</li>
+                    </ul>
+                </li>
+                <li>Tercer ítem</li>
+            </ul>
+
+            <h3>Listas Anidadas</h3>
+            <ol>
+                <li>Primer ítem
+                    <ul>
+                        <li>Sub-ítem A</li>
+                        <li>Sub-ítem B</li>
+                    </ul>
+                </li>
+                <li>Segundo ítem</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Enlaces</h2>
+            <p>Los enlaces se crean con la etiqueta <code>&lt;a&gt;</code>. Aquí tienes algunos ejemplos:
+            
+                <a href="https://www.google.com" target="_blank">Enlace Externo a Google</a>
+                Los enlaces se crean con la etiqueta
+            </p>
+            
+            <ul>
+                <li><a href="https://www.google.com" target="_blank">Enlace Externo a Google</a></li>
+                <li><a href="#contact">Enlace Interno a la Sección de Contacto</a></li>
+                <li><a href="mailto:ejemplo@dominio.com">Enlace de Correo Electrónico</a></li>
+            </ul>
+
+            <h3>Enlaces con Fragmentos</h3>
+            <p><a href="#contact">Ir a la sección de contacto</a></p>
+            
+            <h3 id="contact">Sección de Contacto</h3>
+            <p>Esta es la sección de contacto.</p>
+        </section>
+
+        <section>
+            <h2>Uso de Caracteres Especiales</h2>
+            <p>Algunos caracteres especiales comunes en HTML incluyen:</p>
+            <ul>
+                <li><code>&amp;copy; &copy;</code> - Símbolo de copyright</li>
+                <li><code>&amp;nbsp; &nbsp;</code> - Espacio no separable</li>
+                <li><code>&amp;lt; &lt;</code> - Menor que</li>
+                <li><code>&amp;gt; &gt;</code> - Mayor que</li>
+            </ul>
+            <p>Estos caracteres se utilizan para mostrar símbolos y espacios especiales en el contenido de la página.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Ejemplo de Página Web. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

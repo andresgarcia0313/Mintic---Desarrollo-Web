@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario en HTML</title>
+</head>
+<body>
+    <h1>Formulario de Registro</h1>
+    <form action="/enviar-formulario" method="POST" enctype="multipart/form-data">
+        <!-- Campo de Texto -->
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required><br><br>
+
+        <!-- Campo de Contraseña -->
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" id="contrasena" name="contrasena" placeholder="Ingresa tu contraseña" required><br><br>
+
+        <!-- Campo de Correo Electrónico -->
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" name="email" placeholder="ejemplo@dominio.com" required><br><br>
+
+        <!-- Campo de Número -->
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" name="edad" min="0" max="120" step="1" placeholder="Ingresa tu edad"><br><br>
+
+        <!-- Campo de Teléfono -->
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" name="telefono" placeholder="123-456-7890"><br><br>
+
+        <!-- Botones de Radio -->
+        <fieldset>
+            <legend>Género:</legend>
+            <label><input type="radio" name="genero" value="masculino"> Masculino</label>
+            <label><input type="radio" name="genero" value="femenino"> Femenino</label>
+            <label><input type="radio" name="genero" value="otro"> Otro</label>
+        </fieldset><br>
+
+        <!-- Casillas de Verificación -->
+        <label><input type="checkbox" name="suscripcion" value="newsletter"> Suscribirse al boletín</label><br><br>
+
+        <!-- Menú Desplegable -->
+        <label for="pais">País:</label>
+        <select id="pais" name="pais">
+            <option value="colombia" selected>Colombia</option>
+            <option value="mexico" >México</option>
+            <option value="argentina">Argentina</option>
+        </select><br><br>
+
+        <!-- Área de Texto -->
+        <label for="comentarios">Comentarios:</label>
+        <textarea id="comentarios" name="comentarios" rows="4" cols="50" placeholder="Escribe tus comentarios aquí"></textarea><br><br>
+
+        <!-- Botones de Envío y Reinicio -->
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Restablecer"><br><br>
+    </form>
+</body>
+</html>

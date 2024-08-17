@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incorporación de Imágenes, Videos y Contenidos Embebidos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        img, video, iframe, embed {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px 0;
+        }
+        figure {
+            margin: 20px 0;
+        }
+        figcaption {
+            font-style: italic;
+            text-align: center;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Incorporación de Imágenes, Videos y Contenidos Embebidos</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>1. Imágenes </h2>
+            <p>Las imágenes se insertan usando la etiqueta <code>&lt;img&gt;</code>. Aquí están los atributos esenciales y cómo usarlos:</p>
+            
+            <h3>Ejemplo de Imagen</h3>
+            <img src="ejemplo.jpg" alt="Logo Empresa" width="600" height="400" title="Texto que aparece al pasar el ratón">
+
+            <p>Atributos importantes:
+                <ul>
+                    <li><code>src</code>: Ruta de la imagen.</li>
+                    <li><code>alt</code>: Texto alternativo para accesibilidad y SEO.</li>
+                    <li><code>width</code> y <code>height</code>: Controlan el tamaño de la imagen.</li>
+                    <li><code>title</code>: Texto que aparece al pasar el ratón.</li>
+                </ul>
+            </p>
+
+            <p>Buenas prácticas:
+                <ul>
+                    <li>Optimizar imágenes para rendimiento (tamaño y formato).</li>
+                    <li>Usar <code>srcset</code> para imágenes responsivas.</li>
+                </ul>
+            </p>
+        </section>
+
+        <section>
+            <h2>2. Videos</h2>
+            <p>Los videos se insertan usando la etiqueta <code>&lt;video&gt;</code>. Aquí están los atributos esenciales:</p>
+            
+            <h3>Ejemplo de Video</h3>
+            <video controls loop muted poster="portada.jpg">
+                <source src="video.mp4" type="video/mp4">
+                <source src="video.webm" type="video/webm">
+                Tu navegador no soporta el elemento.
+            </video>
+
+            <p>Atributos importantes:
+                <ul>
+                    <li><code>src</code>: Fuente del video (dentro de <code>&lt;source&gt;</code> para múltiples formatos).</li>
+                    <li><code>controls</code>: Muestra controles de reproducción.</li>
+                    <li><code>autoplay</code>: Reproduce el video automáticamente.</li>
+                    <li><code>loop</code>: Repite el video.</li>
+                    <li><code>muted</code>: Sin sonido por defecto.</li>
+                    <li><code>poster</code>: Imagen mostrada antes de reproducir el video.</li>
+                </ul>
+            </p>
+
+            <p>Formatos recomendados:
+                <ul>
+                    <li><code>MP4</code>: Ampliamente soportado, ideal para la mayoría de los navegadores.</li>
+                    <li><code>WebM</code>: Alternativa moderna con buena compresión.</li>
+                </ul>
+            </p>
+        </section>
+
+        <section>
+            <h2>3. Iframes </h2>
+            <p>El elemento <code>&lt;iframe&gt;</code> se usa para incrustar contenido externo, como videos de YouTube o mapas de Google.</p>
+            
+            <h3>Ejemplo de Iframe</h3>
+            <iframe src="" width="800" height="700" frameborder="5" allowfullscreen></iframe>
+
+            <p>Atributos importantes:
+                <ul>
+                    <li><code>src</code>: URL del contenido externo.</li>
+                    <li><code>width</code> y <code>height</code>: Tamaño del iframe.</li>
+                    <li><code>frameborder</code>: Controla el borde alrededor del iframe (valor 0 elimina el borde).</li>
+                    <li><code>allowfullscreen</code>: Permite ver el iframe en pantalla completa.</li>
+                </ul>
+            </p>
+
+            <p>Consideraciones de seguridad:
+                <ul>
+                    <li>Usar <code>sandbox</code> para limitar capacidades del contenido embebido y evitar problemas de seguridad.</li>
+                </ul>
+            </p>
+        </section>
+
+        <section>
+            <h2>4. Embebidos</h2>
+            <p>La etiqueta <code>&lt;embed&gt;</code> se usa para insertar contenido multimedia o interactivo.</p>
+            
+            <h3>Ejemplo de Embebido</h3>
+            <embed src="documento.pdf" width="800" height="800" type="application/pdf">
+
+            <p>Atributos importantes:
+                <ul>
+                    <li><code>src</code>: Fuente del contenido.</li>
+                    <li><code>width</code> y <code>height</code>: Tamaño del área de embebido.</li>
+                </ul>
+            </p>
+
+            <p>Uso recomendado:
+                <ul>
+                    <li>Usar <code>&lt;embed&gt;</code> para documentos PDF y otros contenidos multimedia.</li>
+                </ul>
+            </p>
+        </section>
+
+        <section>
+            <h2>5. Figura y Leyendas</h2>
+            <p>La etiqueta <code>&lt;figure&gt;</code> agrupa contenido multimedia y la etiqueta <code>&lt;figcaption&gt;</code> proporciona una leyenda o descripción.</p>
+            
+            <h3>Ejemplo de Figura con Leyenda</h3>
+            <figure>
+                <img src="paisaje.jpg" alt="Hermoso paisaje">
+                <figcaption>Un hermoso paisaje al atardecer.</figcaption>
+            </figure>
+
+            <p>Uso de etiquetas:
+                <ul>
+                    <li><code>&lt;figure&gt;</code>: Agrupa la imagen o el video y su leyenda.</li>
+                    <li><code>&lt;figcaption&gt;</code>: Proporciona una descripción o créditos.</li>
+                </ul>
+            </p>
+        </section>
+
+        <section>
+            <h2>6. Buenas Prácticas en Multimedia</h2>
+            <p>Consideraciones para la optimización y accesibilidad:</p>
+            <ul>
+                <li>Optimización de rendimiento: Comprimir imágenes y videos para mejorar tiempos de carga.</li>
+                <li>Accesibilidad: Proporcionar alternativas como texto alternativo para imágenes y subtítulos para videos.</li>
+                <li>Carga diferida: Usar atributos como <code>loading="lazy"</code> para mejorar tiempos de carga en sitios con muchas imágenes.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Ejemplo de Página Web. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
