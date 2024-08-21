@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modelo de Caja en CSS</title>
+  <style>
+    /* Establece el box-sizing a border-box para todos los elementos */
+    * {
+      box-sizing: border-box; /* Incluye el padding y border en el tamaño total del elemento */
+    }
+
+    /* Contenedor principal */
+    .contenedor {
+      width: 80%; /* Ancho del contenedor, afecta el espacio que ocupa en pantalla */
+      margin: 20px auto; /* Atajo: margen superior/inferior de 20px, márgenes laterales automáticos */
+      padding: 10px; /* Espacio interno entre el contenido y el borde */
+      border: 2px solid #333; /* Borde de 2px de grosor, color oscuro */
+      background-color: #f4f4f4; /* Color de fondo */
+      /* Aquí estamos aplicando el modelo de caja "border-box" por defecto */
+    }
+
+    /* Modelo de caja básico */
+    .caja {
+      width: 50%; /* Ancho del contenido de la caja */
+      height: 150px; /* Altura del contenido de la caja */
+      padding: 20px; /* Espacio interno de la caja */
+      margin: 15px; /* Espacio externo entre la caja y otros elementos */
+      border: 3px solid #007BFF; /* Borde azul de 3px */
+      background-color: #e3f2fd; /* Color de fondo azul claro */
+      border-radius: 10px; /* Esquinas redondeadas del borde */
+    }
+
+    /* Efecto de pseudoclase hover */
+    .caja:hover {
+      background-color: #90caf9; /* Cambia el color de fondo al pasar el mouse por encima */
+      border-color: #0056b3; /* Cambia el color del borde en hover */
+    }
+
+    /* Elemento con margen colapsado */
+    .margen-colapsado {
+      margin-top: 30px; /* Margen superior */
+      margin-bottom: 30px; /* Margen inferior, colapsará con el siguiente margen */
+    }
+  </style>
+</head>
+<body>
+
+  <div class="contenedor">
+    <!-- Explicando el Modelo de Caja -->
+    <h2>Modelo de Caja en CSS</h2>
+    <p>El modelo de caja define cómo los elementos HTML son representados como cajas rectangulares en la página. Cada caja tiene cuatro áreas:</p>
+    <ul>
+      <li><strong>Contenido</strong>: El área donde va el texto o imágenes.</li>
+      <li><strong>Padding</strong>: Espacio entre el contenido y el borde.</li>
+      <li><strong>Border</strong>: El borde que rodea el padding.</li>
+      <li><strong>Margin</strong>: El espacio entre el borde y otros elementos.</li>
+    </ul>
+
+    <!-- Caja 1 con el modelo de caja aplicado -->
+    <div class="caja">Caja con Modelo de Caja (box model)</div>
+
+    <!-- Ejemplo de colapso de márgenes -->
+    <div class="margen-colapsado">
+      <p>Este párrafo tiene márgenes superiores e inferiores. Si dos márgenes adyacentes se encuentran, colapsarán en un solo margen.</p>
+    </div>
+  </div>
+
+</body>
+</html>

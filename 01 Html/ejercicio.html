@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        header, footer {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        section {
+            padding: 20px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        form {
+            margin: 20px 0;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input[type="text"], input[type="email"], textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+        }
+        input[type="submit"] {
+            background: #333;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body>
+    <header><!--Esto son cabeceras para el titulo-->
+        <h1>Portafolio</h1> <!--titulo tamaño h1-->
+    </header>
+
+    <section>
+        <h2>Desarrollador Web</h2>
+        <p>¡Hola! Soy un desarrollador web apasionado por crear soluciones innovadoras y eficientes. Me especializo en [Tu Especialidad] y me encanta trabajar en proyectos desafiantes.</p>
+
+        <h3>Habilidades</h3>
+        <ol>
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript</li>
+            <li>Desarrollo Backend</li>
+        </ol>
+
+        <h3>Intereses</h3>
+        <ul>
+            <li>Desarrollo de Software</li>
+            <li>Diseño Web</li>
+            <li>Inteligencia Artificial</li>
+            <li>Juegos de Video</li>
+        </ul>
+
+        <h3>Imágenes y Videos</h3>
+        <figure>
+            <img src="perfil.jpg" alt="Imagen de perfil">
+            <figcaption>Imagen de perfil</figcaption>
+        </figure>
+        <figure>
+            <img src="proyecto.jpg" alt="Imagen del proyecto">
+            <figcaption>Descripción del proyecto</figcaption>
+        </figure>
+        <video controls>
+            <source src="video.mp4" type="video/mp4">
+            Tu navegador no soporta el video.
+        </video>
+    </section>
+
+    <section>
+        <h3>Formulario de Contacto</h3>
+        <form action="mailto:tuemail@ejemplo.com" method="post" enctype="text/plain">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Mensaje:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <input type="submit" value="Enviar">
+        </form>
+    </section>
+
+    <footer>
+        <p>Contactame!! | © 2024. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

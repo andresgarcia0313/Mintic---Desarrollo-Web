@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseño Responsivo con Media Queries</title>
+    <style>
+        /* 
+        El diseño responsivo es la capacidad de una página web para adaptarse a diferentes 
+        tamaños de pantalla, mejorando la experiencia del usuario en cualquier dispositivo.
+        */
+
+        /* Estilos generales: para pantallas móviles primero (Mobile First) */
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            /* Ajustamos el tamaño base de la tipografía */
+            line-height: 1.5;
+            /* Espacio entre líneas para mejor legibilidad */
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #3498db;
+            /* Color de fondo del encabezado */
+            color: white;
+            /* Texto en blanco */
+            text-align: center;
+            /* Texto centrado */
+            padding: 20px;
+        }
+
+        main {
+            padding: 20px;
+            background-color: #f0f0f0;
+            /* Fondo gris claro para el contenido principal */
+        }
+
+        img.responsive {
+            width: 100%;
+            /* Las imágenes ocuparán el 100% del ancho de su contenedor */
+            height: auto;
+            /* Mantiene la proporción de la imagen */
+        }
+
+        /* 
+        Media Query para pantallas más grandes (tablets y escritorios). 
+        Usamos min-width para aplicar estilos solo cuando el ancho es mayor o igual a 768px.
+        */
+        @media (min-width: 768px) {
+            body {
+                font-size: 18px;
+                /* Aumentamos el tamaño de fuente en pantallas más grandes */
+            }
+
+            main {
+                padding: 40px;
+                /* Más espacio alrededor del contenido */
+            }
+
+            header {
+                text-align: left;
+                /* El encabezado se alinea a la izquierda en pantallas grandes */
+            }
+        }
+
+        /* 
+        Media Query para pantallas de escritorio grandes (mayor a 1024px).
+        */
+        @media (min-width: 1024px) {
+            body {
+                font-size: 20px;
+                /* Nuevamente aumentamos el tamaño de la fuente */
+            }
+
+            main {
+                display: flex;
+                /* Usamos Flexbox para organizar el contenido en columnas */
+                justify-content: space-between;
+                /* Espacio entre los elementos */
+            }
+
+            .sidebar,
+            .content {
+                width: 48%;
+                /* Ambos elementos ocupan el 48% del espacio disponible */
+            }
+        }
+
+        /*
+        Ejemplo de uso avanzado de Media Queries:
+        Detectamos orientación en dispositivos móviles (modo paisaje)
+        */
+        @media (orientation: landscape) {
+            header {
+                background-color: #2ecc71;
+                /* Cambia el color del encabezado cuando el dispositivo está en horizontal */
+            }
+        }
+
+        /*
+        Uso de unidades flexibles: vh (altura de la ventana) y vw (ancho de la ventana).
+        Estas unidades cambian de tamaño automáticamente según la ventana del navegador.
+        */
+        .full-screen {
+            height: 100vh;
+            /* Ocupa el 100% de la altura de la pantalla */
+            width: 100vw;
+            /* Ocupa el 100% del ancho de la pantalla */
+            background-color: #e74c3c;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 2em;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Diseño Responsivo con Media Queries</h1>
+    </header>
+
+    <main>
+        <div class="content">
+            <h2>Contenido Principal</h2>
+            <p>Este es un ejemplo de contenido adaptativo que se ajusta a diferentes tamaños de pantalla usando CSS y
+                Media Queries.</p>
+            <img src="https://via.placeholder.com/800x400" alt="Ejemplo de Imagen" class="responsive">
+        </div>
+        <div class="sidebar">
+            <h2>Barra Lateral</h2>
+            <p>El contenido en esta barra lateral se reorganiza en pantallas más grandes gracias a las media queries.
+            </p>
+        </div>
+    </main>
+
+    <div class="full-screen">
+        Pantalla Completa
+    </div>
+
+</body>
+
+</html>

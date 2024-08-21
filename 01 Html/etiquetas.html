@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- La etiqueta <html> define el inicio del documento HTML -->
+<head>
+    <!-- La sección <head> contiene metadatos y enlaces importantes para el documento -->    
+    <meta charset="UTF-8">
+    <!-- <meta charset> define la codificación de caracteres del documento. UTF-8 es estándar y soporta muchos caracteres. -->
+    <meta name="description" content="Ejemplo de un documento HTML con varios elementos">
+    <!-- <meta> proporciona información sobre la página, útil para motores de búsqueda o redes sociales. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Esta etiqueta asegura que la página sea responsive (adaptable a diferentes dispositivos). -->
+    <title>Ejemplo de HTML Completo</title>
+    <!-- <title> define el título que aparecerá en la pestaña del navegador. -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- <link> se usa para enlazar un archivo CSS externo que da estilo a la página. -->
+    <script src="script.js"></script>
+    <!-- <script> se usa para enlazar un archivo de JavaScript externo que añade interactividad a la página. -->
+</head>
+<body>
+    <!-- La sección <body> contiene todo el contenido visual de la página -->
+    <header>
+        <!-- <header> define el encabezado de la página o de una sección importante -->
+        <h1>Título Principal del Sitio Web</h1>
+        <!-- <h1> a <h6> son encabezados. <h1> es el más importante y <h6> el menos importante. -->
+        <nav>
+            <!-- <nav> contiene enlaces de navegación, usualmente usados para moverse entre diferentes secciones o páginas. -->
+            <ul>
+                <!-- <ul> define una lista desordenada. Los elementos de la lista se mostrarán con viñetas. -->
+                <li><a href="#inicio">Inicio</a></li>
+                <!-- <li> representa un elemento de lista. En este caso, cada <li> tiene un enlace (<a>). -->
+                <li><a href="#articulo">Artículo</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- <main> representa el contenido principal de la página, lo más importante para el usuario. -->
+        <article id="articulo">
+            <!-- <article> se usa para un bloque de contenido que tiene sentido por sí mismo (como un artículo o post). -->
+            <header>
+                <!-- Este <header> es específico del artículo, para mostrar su título y metadatos. -->
+                <h2>Título del Artículo</h2>
+                <!-- <h2> es un encabezado de segundo nivel, menos importante que <h1>. -->
+                <time datetime="2024-08-17">17 de Agosto, 2024</time>
+                <!-- <time> se usa para fechas y horas. El atributo datetime es para formatos de fecha reconocidos por máquinas. https://caniuse.com/?search=time-->
+                <address>Escrito por <a href="mailto:autor@ejemplo.com">Autor</a></address>
+                <!-- <address> muestra la información de contacto de una persona o entidad. Aquí se usa un enlace de correo (<a>). -->
+            </header>
+            <section>
+                <!-- <section> se usa para agrupar contenido relacionado dentro de un artículo. -->
+                <h3>Introducción</h3>
+                <!-- <h3> es un encabezado de tercer nivel, usado para subtítulos dentro de una sección. -->
+                <p>Este es un párrafo introductorio.</p>
+                <!-- <p> representa un párrafo de texto. -->
+            </section>
+
+            <section>
+                <h3>Sección Principal</h3>
+                <p>Contenido principal del artículo.</p>
+
+                <figure>
+                    <!-- <figure> contiene contenido ilustrativo (como imágenes, gráficos, tablas) con una leyenda opcional. -->
+                    <img src="imagen.jpg" alt="Descripción de la imagen">
+                    <!-- <img> se usa para insertar una imagen en la página. El atributo alt proporciona una descripción alternativa si la imagen no se puede cargar. -->
+
+                    <figcaption>Figura 1: Descripción de la imagen.</figcaption>
+                    <!-- <figcaption> proporciona una leyenda o descripción para la imagen dentro de <figure>. -->
+                </figure>
+
+                <aside>
+                    <!-- <aside> representa contenido relacionado, pero no parte del flujo principal (como una nota o un anuncio). -->
+                    <p>Este es un contenido complementario, como un dato curioso o una cita.</p>
+                </aside>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <!-- <footer> define el pie de página de la página web o de una sección. -->
+        <p>&copy; 2024 Mi Sitio Web</p>
+        <!-- El símbolo &copy; se usa para el símbolo de copyright. -->
+    </footer>
+
+    <section>
+        <!-- Otro <section> para agrupar contenido relacionado, en este caso el formulario de contacto. -->
+        <h4>Formulario de Contacto</h4>
+        <!-- <h4> es un encabezado de cuarto nivel. -->
+
+        <form action="/submit" method="post">
+            <!-- <form> crea un formulario interactivo para la entrada de datos. El atributo action define a dónde se envían los datos, y method define el método HTTP. -->
+
+            <fieldset>
+                <!-- <fieldset> agrupa elementos de un formulario de manera lógica, generalmente rodeado de un borde. -->
+                <legend>Datos Personales</legend>
+                <!-- <legend> proporciona un título a un <fieldset>. -->
+
+                <label for="nombre">Nombre:</label>
+                <!-- <label> se usa para describir la función de un <input>. El atributo for debe coincidir con el id del <input> correspondiente. -->
+                <input type="text" id="nombre" name="nombre">
+                <!-- <input> crea un campo donde el usuario puede ingresar datos. Aquí, el tipo es texto. -->
+
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email">
+                <!-- El tipo "email" asegura que el formato ingresado sea un correo válido. -->
+
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje"></textarea>
+                <!-- <textarea> permite que el usuario escriba texto largo en el formulario. -->
+
+                <button type="submit">Enviar</button>
+                <!-- <button> crea un botón. Aquí está configurado para enviar el formulario. -->
+            </fieldset>
+        </form>
+    </section>
+
+    <section>
+        <h4>Lista Desordenada</h4>
+        <ul>
+            <!-- Otra lista desordenada <ul>, útil para mostrar elementos no numerados. -->
+            <li>Elemento 1</li>
+            <li>Elemento 2</li>
+            <li>Elemento 3</li>
+            <!-- Cada <li> es un elemento de lista. -->
+        </ul>
+    </section>
+
+    <section>
+        <h4>Lista Ordenada</h4>
+        <ol>
+            <!-- <ol> define una lista ordenada, donde los elementos están numerados. -->
+            <li>Primer elemento</li>
+            <li>Segundo elemento</li>
+            <li>Tercer elemento</li>
+        </ol>
+    </section>
+
+    <section>
+        <h4>Tabla de Ejemplo</h4>
+        <table border="1">
+            <!-- <table> define una tabla para organizar datos en filas y columnas. -->
+            <thead>
+                <!-- <thead> contiene la cabecera de la tabla. -->
+                <tr>
+                    <!-- <tr> representa una fila de la tabla. -->
+                    <th>Nombre</th>
+                    <!-- <th> representa una celda de cabecera, que usualmente está en negrita. -->
+                    <th>Edad</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- <tbody> contiene las filas de datos de la tabla. -->
+                <tr>
+                    <td>Ana</td>
+                    <!-- <td> representa una celda de datos normales. -->
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td>Juan</td>
+                    <td>25</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</body>
+
+</html>

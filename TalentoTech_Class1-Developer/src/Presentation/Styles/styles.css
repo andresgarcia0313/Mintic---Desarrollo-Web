@@ -1,0 +1,26 @@
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.hero {
+    background: url('hero-bg.jpg') no-repeat center center;
+    background-size: cover;
+    color: white;
+    padding: 100px 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+footer a {
+    color: #f8f9fa;
+    text-decoration: none;
+}

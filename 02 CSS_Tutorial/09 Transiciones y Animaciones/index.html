@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transiciones y Animaciones en CSS</title>
+    <style>
+        /*
+        Introducción a las transiciones en CSS:
+        Las transiciones permiten cambiar gradualmente una propiedad CSS 
+        (como color, tamaño, etc.) en un tiempo determinado cuando ocurre un evento (ej: hover).
+        */
+
+        /* 
+        Efecto básico de hover con transition:
+        Aquí, cuando el usuario pasa el mouse sobre el botón, el fondo cambia 
+        de color de manera suave en 0.5 segundos.
+        */
+        .btn {
+            background-color: #3498db; /* Color de fondo inicial */
+            color: white; /* Color de texto */
+            padding: 15px 30px;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            /* Transition: propiedad (background-color), duración (0.5s), y función de tiempo (ease) */
+            transition: background-color 0.5s ease;
+        }
+
+        .btn:hover {
+            background-color: #2ecc71; /* Cambia el color de fondo cuando se hace hover */
+        }
+
+        /*
+        @keyframes para crear animaciones complejas:
+        Con @keyframes, definimos cómo un elemento cambia a lo largo del tiempo. 
+        En este caso, estamos animando la propiedad "transform" para mover y escalar un cuadro.
+        */
+        @keyframes moverYEscalar {
+            0% {
+                transform: translateX(0) scale(1); /* Estado inicial */
+            }
+            50% {
+                transform: translateX(100px) scale(1.5); /* Se mueve 100px a la derecha y se escala al 150% */
+            }
+            100% {
+                transform: translateX(0) scale(1); /* Vuelve a la posición original */
+            }
+        }
+
+        /* 
+        Control de la animación con la propiedad animation: 
+        - nombre de la animación (moverYEscalar)
+        - duración (2s)
+        - número de iteraciones (infinito, para un bucle continuo).
+        */
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: #e74c3c;
+            margin: 50px;
+            /* Aplicamos la animación definida por @keyframes */
+            animation: moverYEscalar 2s infinite;
+        }
+
+        /*
+        Control de dirección y velocidad de las animaciones:
+        - animation-direction: alterna permite que la animación se reproduzca hacia adelante y luego hacia atrás.
+        - animation-timing-function: ease-in-out hace que la animación comience y termine lentamente.
+        */
+        .box-alternate {
+            width: 100px;
+            height: 100px;
+            background-color: #9b59b6;
+            margin: 50px;
+            /* Usamos los mismos keyframes, pero alteramos la dirección y el tiempo */
+            animation: moverYEscalar 2s infinite alternate ease-in-out;
+        }
+
+        /*
+        Efectos de entrada y salida con animation-delay y animation-fill-mode:
+        - animation-delay: 2s retrasa el inicio de la animación por 2 segundos.
+        - animation-fill-mode: forwards asegura que el cuadro se quede en el último estado de la animación.
+        */
+        .box-delay {
+            width: 100px;
+            height: 100px;
+            background-color: #f1c40f;
+            margin: 50px;
+            /* Esta animación se retrasa y permanece en el estado final */
+            animation: moverYEscalar 2s 1 forwards;
+            animation-delay: 2s;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Transiciones y Animaciones en CSS</h1>
+
+    <!-- Botón con transición suave en hover -->
+    <button class="btn">Pasa el mouse sobre mí</button>
+
+    <!-- Cuadro animado que se mueve y escala en bucle -->
+    <div class="box"></div>
+
+    <!-- Cuadro animado que alterna la dirección de la animación -->
+    <div class="box-alternate"></div>
+
+    <!-- Cuadro animado que tiene un retraso y se queda en el estado final -->
+    <div class="box-delay"></div>
+
+</body>
+</html>
