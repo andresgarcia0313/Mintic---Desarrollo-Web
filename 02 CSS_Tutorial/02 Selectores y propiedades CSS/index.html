@@ -1,32 +1,28 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejemplo de Selectores y Propiedades CSS</title>
-    
-    <!-- Vinculamos un archivo CSS externo -->
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
 
+    <!-- Vinculamos un archivo CSS externo -->
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
     <!-- Selector de ID -->
     <h1 id="main-title">Aprendiendo CSS: Selectores y Propiedades</h1>
-    
     <!-- Selector de Clase -->
     <p class="description">CSS es el lenguaje que usamos para estilizar páginas web.</p>
-    
     <!-- Selector de Elemento -->
-    <div>
+    <div display="inline">
         <p>Este es un párrafo dentro de un div.</p>
     </div>
-
     <!-- Selector de Atributo -->
     <a href="https://example.com" target="_blank">Visitar Ejemplo</a>
-
     <!-- Pseudoclases -->
     <button>Haz clic aquí</button>
-
     <!-- Pseudoelementos -->
     <p class="pseudoelement">Este párrafo tiene pseudoelementos.</p>
 
@@ -34,7 +30,12 @@
     <div class="parent">
         <p>Este es un hijo directo del div padre.</p>
         <span>Este es un hermano general del párrafo anterior.</span>
+        <div>
+            <p>Este es un hijo directo del div padre.</p>
+        </div>
     </div>
-    
+
+
 </body>
+
 </html>
