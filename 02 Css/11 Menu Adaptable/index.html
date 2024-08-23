@@ -1,18 +1,25 @@
-<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html> <!-- Define el tipo de documento -->
+<html lang="es"><!-- Especifica el tipo de documento HTML y el idioma -->
+<!-- <head> Contiene información sobre el documento -->
+
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"> <!-- Define la codificación de caracteres como UTF-8 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menú Adaptativo</title>
-    <link rel="stylesheet" href="styles.css">
+    <!-- Hace que el diseño sea adaptable a diferentes tamaños de pantalla -->
+    <title>Menú Adaptativo</title> <!-- Título de la página que aparece en la pestaña del navegador -->
+    <link rel="stylesheet" href="styles.css"> <!-- Enlaza el archivo CSS que contiene los estilos de la página -->
 </head>
+
 <body>
     <nav class="navbar">
-        <input type="checkbox" id="toggle-menu">
-        <label for="toggle-menu" class="menu-icon">&#9776;</label> <!-- Ícono del menú -->
+        <input type="checkbox"
+            id="toggle-menu"><!-- Elemento que actúa como una casilla de verificación para controlar el menú y permanece oculto-->
+        <!-- Etiqueta que funciona como un ícono para mostrar u ocultar el menú en pantallas pequeñas -->
+        <label for="toggle-menu" class="menu-icon">&#9776;</label>
+        <!-- &#9776; es el carácter para el ícono de menú (hamburguesa) -->
         <ul class="menu">
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Servicios</a></li>
+            <li><a href="#">Inicio</a></li><!-- Lista de elementos del menú -->
+            <li><a href="#">Servicios</a><!-- Elemento del menú con submenú y <a> como enlace web a la misma página --></li>
             <li><a href="#">Nosotros</a></li>
             <li><a href="#">Contacto</a></li>
         </ul>

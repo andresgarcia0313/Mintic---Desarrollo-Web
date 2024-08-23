@@ -1,71 +1,83 @@
-/* Estilos generales */
+/* Estilos generales para el cuerpo de la página */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+    font-family: Arial, sans-serif; /* Define la fuente del texto */
+    margin: 0; /* Elimina el margen por defecto */
+    padding: 0; /* Elimina el relleno por defecto */
 }
 
-/* Estilo del menú */
+/* Estilos para la barra de navegación */
 .navbar {
-    background-color: #333;
-    overflow: hidden;
+    background-color: #333; /* Color de fondo oscuro para la barra de navegación */
+    overflow: hidden; /* Asegura que el contenido no se desborde */
 }
 
+/* Estilos para el menú dentro de la barra de navegación */
 .navbar .menu {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-around;
+    list-style-type: none; /* Elimina las viñetas de la lista */
+    margin: 0; /* Elimina el margen alrededor de la lista */
+    padding: 0; /* Elimina el relleno alrededor de la lista */
+    display: flex; /* Muestra los elementos de la lista en línea horizontalmente */
+    justify-content: space-around; /* Distribuye los elementos de manera uniforme */
 }
 
+/* Estilos para cada elemento de la lista del menú */
 .navbar .menu li {
-    display: inline;
+    display: inline; /* Muestra los elementos de la lista en línea */
 }
 
-.navbar .menu li a {
-    color: white;
-    padding: 14px 20px;
-    text-decoration: none;
-    display: block;
+/* Estilos para los enlaces dentro del menú */
+.navbar .menu li a { 
+    color: white; /* Color del texto de los enlaces */
+    padding: 14px 20px; /* Espaciado interno alrededor del texto del enlace */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    display: block; /* Hace que el enlace ocupe todo el espacio disponible en su contenedor */
 }
 
+/* Estilos para el efecto cuando se pasa el cursor sobre un enlace del menú */
 .navbar .menu li a:hover {
-    background-color: #575757;
+    background-color: #575757; /* Cambia el color de fondo cuando el cursor está sobre el enlace */
 }
 
-/* Ocultar checkbox y menú ícono en pantallas grandes */
+/* Estilos para ocultar elementos en pantallas grandes */
 #toggle-menu,
 .menu-icon {
-    display: none;
+    display: none; /* Oculta la casilla de verificación y el ícono del menú */
 }
 
-/* Estilos para dispositivos móviles */
+/* Estilos específicos para dispositivos móviles */
 @media (max-width: 768px) {
-    /* Mostrar el checkbox y el ícono del menú en pantallas pequeñas */
-    #toggle-menu,
+    /* Estilos para el ícono del menú en pantallas pequeñas */
     .menu-icon {
-        display: block;
+        display: block; /* Muestra el ícono del menú */
+        color: white; /* Color del ícono del menú */
+        padding: 5px 7px 0px 0px; /* Espaciado alrededor del ícono */
+        cursor: pointer; /* Cambia el cursor cuando se pasa sobre el ícono */
+        font-size: 24px; /* Tamaño del ícono */
+        text-align: right; /* Alinea el ícono a la derecha */
     }
 
-    /* Cambiar el menú a vertical */
+    /* Ocultar la casilla de verificación en pantallas móviles */
+    #toggle-menu {
+        display: none; /* No muestra la casilla de verificación */
+    }
+
+    /* Estilos para el menú en pantallas pequeñas */
     .navbar .menu {
-        display: none;
-        flex-direction: column;
-        text-align: center;
+        display: none; /* Oculta el menú por defecto */
+        flex-direction: column; /* Muestra los elementos del menú en una columna vertical */
+        text-align: center; /* Centra el texto en los elementos del menú */
     }
 
-    /* Mostrar menú cuando se selecciona el checkbox */
-    #toggle-menu:checked + .menu-icon + .menu {
-        display: flex;
-    }
-
-    /* Estilo del ícono del menú */
-    .menu-icon {
-        color: white;
-        padding: 14px 20px;
-        cursor: pointer;
-        font-size: 24px;
-        text-align: right;
+    /* Mostrar el menú cuando la casilla de verificación está seleccionada */
+    #toggle-menu:checked + .menu-icon + .menu { 
+        display: flex; /* Muestra el menú cuando la casilla de verificación está seleccionada */
     }
 }
+/* 
+El selector de hermano adyacente (+) selecciona un elemento que sigue directamente a otro. 
+En el código:
+#toggle-menu:checked + .menu-icon + .menu {
+    display: flex; 
+}
+Esto significa que el menú ('.menu') solo se mostrará si el checkbox ('#toggle-menu') está marcado y solo si '.menu-icon' está justo antes de '.menu'.
+*/
