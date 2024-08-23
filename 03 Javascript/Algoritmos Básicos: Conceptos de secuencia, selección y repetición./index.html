@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Lógica de Programación con JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #output {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background: #fafafa;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ejemplo de Lógica de Programación</h1>
+        <p>Este ejemplo demuestra cómo usar JavaScript para trabajar con conceptos básicos de lógica de programación:</p>
+
+        <button id="runExample">Ejecutar Ejemplo</button>
+        <div id="output"></div>
+    </div>
+
+    <script>
+        // Función que realiza operaciones básicas
+        debugger;
+        function basicAlgorithmExample() {
+            debugger;
+            let output = '';
+
+            // Secuencia: ejecución de código en orden
+            // Explicación: El código se ejecuta línea por línea en el orden en que aparece.
+            output += 'Secuencia:\n';
+            output += '1. Inicializamos una variable.\n';
+            output += '2. Realizamos una operación con esa variable.\n';
+
+            // Declaración de una variable
+            // Explicación: Aquí declaramos una variable llamada 'number' y le asignamos el valor 5.
+            let number = 5;
+            output += `Número inicial: ${number}\n`;
+
+            // Selección: tomar decisiones basadas en condiciones
+            // Explicación: Usamos una declaración 'if' para decidir si el número es par o impar.
+            output += '\nSelección:\n';
+            if (number % 2 === 0) {
+                output += 'El número es par.\n'; // Si el número es divisible entre 2, es par.
+            } else {
+                output += 'El número es impar.\n'; // Si no, es impar.
+            }
+
+            // Repetición: ejecutar un bloque de código varias veces
+            // Explicación: Usamos un bucle 'for' para repetir una acción varias veces.
+            output += '\nRepetición:\n';
+            for (let i = 1; i <= 5; i++) {
+                output += `Contador: ${i}\n`; // Imprime los números del 1 al 5.
+            }
+
+            // Mostrar resultado en la página
+            // Explicación: Actualizamos el contenido del elemento con id 'output' para mostrar el resultado.
+            document.getElementById('output').textContent = output;
+        }
+
+        // Asignar la función al botón para ejecutarla al hacer clic
+        // Explicación: Cuando se hace clic en el botón, se llama a la función 'basicAlgorithmExample'.
+        document.getElementById('runExample').addEventListener('click', basicAlgorithmExample);
+    </script>
+</body>
+</html>

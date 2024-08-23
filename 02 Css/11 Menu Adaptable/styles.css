@@ -45,7 +45,7 @@ body {
 }
 
 /* Estilos específicos para dispositivos móviles */
-@media (max-width: 768px) {
+@media (max-width: 428px) {
     /* Estilos para el ícono del menú en pantallas pequeñas */
     .menu-icon {
         display: block; /* Muestra el ícono del menú */
