@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Propiedad Display</title>
+    <style>
+        /* Ejemplo de display: block */
+        .block {
+            /* 'display: block' hace que el elemento ocupe todo el ancho disponible */
+            /* y se muestre en una nueva línea */
+            display: block;
+            background-color: lightblue; /* Color de fondo para visualizar el elemento */
+            padding: 10px; /* Espacio interno dentro del borde del elemento */
+            margin-bottom: 10px; /* Espacio fuera del borde del elemento, en la parte inferior */
+        }
+
+        /* Ejemplo de display: inline */
+        .inline {
+            /* 'display: inline' hace que el elemento se muestre en línea con otros elementos */
+            /* y solo ocupe el espacio necesario para su contenido */
+            display: inline;
+            background-color: lightgreen; /* Color de fondo para visualizar el elemento */
+            padding: 10px; /* Espacio interno dentro del borde del elemento */
+            margin-right: 10px; /* Espacio fuera del borde del elemento, a la derecha */
+        }
+
+        /* Ejemplo de display: inline-block */
+        .inline-block {
+            /* 'display: inline-block' combina características de 'block' e 'inline' */
+            /* Permite definir ancho y alto, pero se muestra en línea con otros elementos */
+            display: inline-block;
+            background-color: lightcoral; /* Color de fondo para visualizar el elemento */
+            padding: 10px; /* Espacio interno dentro del borde del elemento */
+            margin-right: 10px; /* Espacio fuera del borde del elemento, a la derecha */
+        }
+
+        /* Ejemplo de display: flex */
+        .flex-container {
+            /* 'display: flex' convierte el contenedor en un contenedor flexible */
+            /* Los elementos hijos se alinean en una dirección específica (por defecto, horizontalmente) */
+            display: flex;
+            background-color: lightgoldenrodyellow; /* Color de fondo para visualizar el contenedor */
+            padding: 10px; /* Espacio interno dentro del borde del contenedor */
+            margin-bottom: 10px; /* Espacio fuera del borde del contenedor, en la parte inferior */
+        }
+        
+        .flex-item {
+            /* Los elementos dentro del contenedor flex se distribuyen y alinean automáticamente */
+            /* 'flex: 1' permite que los elementos hijos crezcan y se reduzcan para ocupar el espacio disponible */
+            background-color: lightpink; /* Color de fondo para visualizar los elementos hijos */
+            padding: 10px; /* Espacio interno dentro del borde del elemento */
+            margin: 5px; /* Espacio fuera del borde del elemento */
+            flex: 1; /* Hacer que el elemento crezca para llenar el espacio disponible */
+        }
+
+        /* Ejemplo de display: grid */
+        .grid-container {
+            /* 'display: grid' convierte el contenedor en una cuadrícula */
+            /* Los elementos hijos se distribuyen en filas y columnas según la configuración definida */
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Define 3 columnas de igual tamaño en la cuadrícula */
+            gap: 10px; /* Espacio entre los elementos de la cuadrícula */
+            background-color: lightgrey; /* Color de fondo para visualizar el contenedor */
+            padding: 10px; /* Espacio interno dentro del borde del contenedor */
+        }
+        
+        .grid-item {
+            /* Cada elemento dentro del contenedor de cuadrícula se coloca en una celda de la cuadrícula */
+            background-color: lightsteelblue; /* Color de fondo para visualizar los elementos de la cuadrícula */
+            padding: 10px; /* Espacio interno dentro del borde del elemento */
+        }
+
+        /* Ejemplo de display: none */
+        .none {
+            /* 'display: none' oculta el elemento, eliminándolo del flujo del documento */
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejemplos de Propiedad Display en CSS</h1>
+
+    <!-- Elemento con display: block -->
+    <div class="block">Este es un elemento con display: block</div>
+
+    <!-- Elementos con display: inline -->
+    <span class="inline">Este es un elemento con display: inline</span>
+    <span class="inline">Otro elemento con display: inline</span>
+
+    <!-- Elementos con display: inline-block -->
+    <div class="inline-block">Este es un elemento con display: inline-block</div>
+    <div class="inline-block">Otro elemento con display: inline-block</div>
+
+    <!-- Contenedor con display: flex y elementos hijos -->
+    <div class="flex-container">
+        <div class="flex-item">Elemento Flex 1</div>
+        <div class="flex-item">Elemento Flex 2</div>
+        <div class="flex-item">Elemento Flex 3</div>
+    </div>
+
+    <!-- Contenedor con display: grid y elementos hijos -->
+    <div class="grid-container">
+        <div class="grid-item">Elemento Grid 1</div>
+        <div class="grid-item">Elemento Grid 2</div>
+        <div class="grid-item">Elemento Grid 3</div>
+        <div class="grid-item">Elemento Grid 4</div>
+        <div class="grid-item">Elemento Grid 5</div>
+        <div class="grid-item">Elemento Grid 6</div>
+    </div>
+
+    <!-- Elemento con display: none (oculto) -->
+    <div class="none">Este elemento está oculto con display: none</div>
+</body>
+</html>

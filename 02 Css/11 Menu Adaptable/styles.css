@@ -1,0 +1,71 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo del menú */
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+}
+
+.navbar .menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbar .menu li {
+    display: inline;
+}
+
+.navbar .menu li a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    display: block;
+}
+
+.navbar .menu li a:hover {
+    background-color: #575757;
+}
+
+/* Ocultar checkbox y menú ícono en pantallas grandes */
+#toggle-menu,
+.menu-icon {
+    display: none;
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+    /* Mostrar el checkbox y el ícono del menú en pantallas pequeñas */
+    #toggle-menu,
+    .menu-icon {
+        display: block;
+    }
+
+    /* Cambiar el menú a vertical */
+    .navbar .menu {
+        display: none;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* Mostrar menú cuando se selecciona el checkbox */
+    #toggle-menu:checked + .menu-icon + .menu {
+        display: flex;
+    }
+
+    /* Estilo del ícono del menú */
+    .menu-icon {
+        color: white;
+        padding: 14px 20px;
+        cursor: pointer;
+        font-size: 24px;
+        text-align: right;
+    }
+}
