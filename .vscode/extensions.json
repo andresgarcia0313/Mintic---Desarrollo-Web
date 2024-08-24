@@ -1,0 +1,17 @@
+{
+    "recommendations": [
+        "ms-ceintl.vscode-language-pack-es",
+        "sonarsource.sonarlint-vscode",
+        "esbenp.prettier-vscode",
+        "ms-edgedevtools.vscode-edge-devtools",
+        "pkief.material-icon-theme",
+        "ms-vsliveshare.vsliveshare",
+        "ritwickdey.liveserver",
+        "ecmel.vscode-html-css",
+        "eamodio.gitlens",
+        "dbaeumer.vscode-eslint",
+        "intellsmi.comment-translate",
+        "formulahendry.auto-rename-tag",
+        "formulahendry.auto-close-tag"
+    ]
+}
