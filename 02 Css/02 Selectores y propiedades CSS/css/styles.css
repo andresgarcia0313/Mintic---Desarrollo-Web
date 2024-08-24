@@ -9,10 +9,14 @@
 
 /* Selector de clase (.description apunta a los elementos con la clase description) */
 .description {
-    color: #555; /* Color del texto */
-    line-height: 1.6; /* Espaciado entre líneas */
-    padding: 10px; /* Relleno alrededor del texto */
-    background-color: #f0f0f0; /* Color de fondo */
+    color: #ffffff; /* Color del texto */
+    line-height: 300%; /* Espaciado entre líneas */
+    padding: 800px 20px 10px 0px; /* Relleno alrededor del texto */    
+    background: linear-gradient(135deg, rgb(87, 46, 0) 0%, rgb(82, 80, 80) 50%, rgba(30,0,87,1) 100%);
+    
+    border-radius: 24px 24px 24px 24px;/* Bordes redondeados */
+    border: 1px inset #000000;/* Borde con sombra */
+    box-shadow: 0px 0px 7px 1px rgba(0,0,0,1);/* Sombra */
 }
 
 /* Selector de elemento (selecciona todos los <p> dentro de cualquier <div>) */
