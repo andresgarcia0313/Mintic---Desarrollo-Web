@@ -1,27 +1,42 @@
 /*  Selectores básicos (elemento, clase, ID) */
-
+/*  Propiedades de fondo */
+/* Controla el color y la imagen de fondo, repetición y posición */
+body {
+    font-family: Arial, Helvetica, sans-serif; /* Fuente del texto */
+    margin: 0; /* Margen de 0 */
+    padding: 100px; /* Relleno de 0 */
+    background-color: #f0f0f0; /* Color de fondo */
+    background-image: url('fondo.jpg'); /* Imagen de fondo */
+    background-repeat: no-repeat; /* No repetir la imagen */
+    background-position: center center; /* Centrar la imagen */
+}
 /* Selector de ID (#main-title apunta al ID del <h1>) */
 #main-title {
     color: #14bd9e; /* Propiedad de color del texto */
     text-align: center; /* Alineación de texto */
     font-size: 24px; /* Tamaño de fuente */
+    width: 100%; /* Ancho del 100% del contenedor padre */
+    max-width: 1200px; /* Máximo ancho de 1200px */
+    height: auto; /* Altura automática */
+    
 }
 
 /* Selector de clase (.description apunta a los elementos con la clase description) */
 .description {
     color: #ffffff; /* Color del texto */
     line-height: 300%; /* Espaciado entre líneas */
-    padding: 800px 20px 10px 0px; /* Relleno alrededor del texto */    
-    background: linear-gradient(135deg, rgb(87, 46, 0) 0%, rgb(82, 80, 80) 50%, rgba(30,0,87,1) 100%);
-    
+    padding: 50px; /* Relleno alrededor del texto */    
+    background: linear-gradient(180deg,rgb(149, 114, 255) 0%, rgb(36, 71, 148) 3%, rgb(121, 143, 200) 95%, rgb(63, 63, 64) 100%);
     border-radius: 24px 24px 24px 24px;/* Bordes redondeados */
-    border: 1px inset #000000;/* Borde con sombra */
-    box-shadow: 0px 0px 7px 1px rgba(0,0,0,1);/* Sombra */
+    border: 1px groove #f7f7f7;/* Borde con sombra */
+    box-shadow: 0px 0px 7px 1px rgba(0,0,0,1),inset 0px 0px 7px 1px rgb(230, 228, 228);/* Sombra */
+    margin: 15px;
+    
 }
 
 /* Selector de elemento (selecciona todos los <p> dentro de cualquier <div>) */
 div p {
-    color: #000; /* Propiedad de color */
+    color: #726e00; /* Propiedad de color */
     margin: 20px 0; /* Margen superior e inferior de 20px, 0 a los lados */
 }
 
@@ -90,14 +105,7 @@ p {
     letter-spacing: 1px; /* Aumenta el espacio entre letras */
 }
 
-/*  Propiedades de fondo */
-/* Controla el color y la imagen de fondo, repetición y posición */
-body {
-    background-color: #e0e0e0; /* Color de fondo */
-    background-image: url('fondo.jpg'); /* Imagen de fondo */
-    background-repeat: no-repeat; /* No repetir la imagen */
-    background-position: center center; /* Centrar la imagen */
-}
+
 
 /* Propiedades de visualización */
 /* Cambia cómo se muestran los elementos */
@@ -109,15 +117,6 @@ button {
 
 /* Propiedades de tamaño */
 /* Controla el tamaño de los elementos */
-#main-title {
-    width: 100%; /* Ancho del 100% del contenedor padre */
-    max-width: 1200px; /* Máximo ancho de 1200px */
-    height: auto; /* Altura automática */
-}
 
-/* Propiedades de margen y relleno */
-/* Controla los márgenes exteriores y relleno interior */
-.description {
-    margin: 20px; /* Márgenes alrededor del elemento */
-    padding: 15px; /* Espacio interno dentro del elemento */    
-}
+
+
