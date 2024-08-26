@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Personal</title>
+    <style>
+        /* "*" permite seleccionar todos los elementos de la página */
+        * { 
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;/* box-sizing: border-box hace que el ancho y alto de un elemento incluya el padding y border */
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        header {/* header es un elemento de bloque por defecto */
+            background-color: #333;
+            color: white;
+            padding: 15px 20px;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+        }
+
+        nav ul li a:hover {
+            background-color: #555;
+            border-radius: 4px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .project {
+            flex: 1 1 calc(33% - 40px);/* significa: crece, encoge, y ocupa un ancho del 33% menos 40px.*/
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .project img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .project h3 {
+            margin-top: 10px;
+        }
+
+        .project p {
+            color: #555;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .project {
+                flex: 1 1 calc(50% - 40px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .project {
+                flex: 1 1 100%;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Mi Portafolio</h1>
+            <ul>
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#projects">Proyectos</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container" id="projects">
+        <section class="project">
+            <img src="https://via.placeholder.com/300x200" alt="Proyecto 1">
+            <h3>Proyecto 1</h3>
+            <p>Descripción breve del proyecto 1. Explica en pocas palabras de qué trata y los objetivos que cumpliste.</p>
+        </section>
+
+        <section class="project">
+            <img src="https://via.placeholder.com/300x200" alt="Proyecto 2">
+            <h3>Proyecto 2</h3>
+            <p>Descripción breve del proyecto 2. Explica en pocas palabras de qué trata y los objetivos que cumpliste.</p>
+        </section>
+
+        <section class="project">
+            <img src="https://via.placeholder.com/300x200" alt="Proyecto 3">
+            <h3>Proyecto 3</h3>
+            <p>Descripción breve del proyecto 3. Explica en pocas palabras de qué trata y los objetivos que cumpliste.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Mi Nombre. Todos los derechos reservados.</p>
+        <p><a href="mailto:correo@ejemplo.com" style="color: white; text-decoration: none;">correo@ejemplo.com</a></p>
+    </footer>
+</body>
+</html>

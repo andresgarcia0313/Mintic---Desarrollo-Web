@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Ejemplo 5</title>
+    <style>
+        .container {
+            display: flex;
+        }
+
+        .item {
+            background-color: #E91E63;
+            color: white;
+            padding: 20px;
+            margin: 5px;
+            text-align: center;
+        }
+
+        .item:first-child {
+            /* Aplica al primer elemento */
+            flex: 1;
+            /* Ocupa un espacio igual */
+        }
+
+        .item:last-child {
+            /* Aplica al último elemento */
+            flex: 2;
+            /* Ocupa el doble de espacio */
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Ejemplo 5: Elementos con diferentes tamaños</h2>
+    <div class="container">
+        <div class="item">Elemento 1 (1x)</div>
+        <div class="item">Elemento 2 (2x)</div>
+        <div class="item">Elemento 3 (1x)</div>
+    </div>
+</body>
+
+</html>

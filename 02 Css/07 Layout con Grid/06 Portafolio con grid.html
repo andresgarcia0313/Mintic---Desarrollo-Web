@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio con Grid</title>
+    <style>
+        /* Reset básico para márgenes y rellenos */
+        * {
+            margin: 0; /* Elimina márgenes */
+            padding: 0; /* Elimina rellenos */
+            box-sizing: border-box; /* Incluye bordes y rellenos en el ancho */
+        }
+
+        /* Estilo general del cuerpo del documento */
+        body {
+            font-family: Arial, sans-serif; /* Fuente de texto */
+            line-height: 1.6; /* Espaciado entre líneas */
+        }
+
+        /* Contenedor principal del grid */
+        .grid-container {
+            display: grid; /* Activa CSS Grid */
+            grid-template-rows: auto 1fr auto; /* Tres filas: auto, flexible, auto */
+            grid-template-columns: 1fr; /* Una columna flexible */
+            gap: 20px; /* Espacio entre filas y columnas */
+            min-height: 100vh; /* Altura mínima de la vista */
+        }
+
+        /* Estilo del encabezado */
+        header {
+            grid-row: 1; /* Coloca el encabezado en la primera fila */
+            background-color: #333; /* Color de fondo oscuro */
+            color: white; /* Color del texto */
+            padding: 15px 20px; /* Espacio interno */
+        }
+
+        /* Estilo del título en el encabezado */
+        header h1 {
+            margin: 0; /* Elimina márgenes */
+        }
+
+        /* Estilo de la barra de navegación */
+        nav {
+            display: grid; /* Usa grid para la navegación */
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Columnas flexibles */
+            gap: 20px; /* Espacio entre elementos */
+            align-items: center; /* Alinea elementos verticalmente */
+        }
+
+        /* Estilo para los elementos de la lista de navegación */
+        nav ul {
+            list-style: none; /* Elimina los puntos de la lista */
+            display: grid; /* Usa grid para los elementos de lista */
+            grid-auto-flow: column; /* Coloca los elementos en fila */
+            gap: 20px; /* Espacio entre los elementos de la lista */
+        }
+
+        /* Estilo de cada ítem de la lista de navegación */
+        nav ul li {
+            margin-left: 0; /* Sin margen a la izquierda */
+        }
+
+        /* Estilo de los enlaces en la navegación */
+        nav ul li a {
+            color: white; /* Color del texto */
+            text-decoration: none; /* Elimina subrayado */
+            padding: 5px 10px; /* Espacio interno */
+            display: block; /* Hacer que el enlace ocupe todo el espacio del elemento */
+        }
+
+        /* Estilo para el efecto hover en los enlaces */
+        nav ul li a:hover {
+            background-color: #555; /* Color de fondo al pasar el mouse */
+            border-radius: 4px; /* Bordes redondeados */
+        }
+
+        /* Estilo del contenido principal */
+        main {
+            grid-row: 2; /* Coloca el contenido principal en la segunda fila */
+            display: grid; /* Usa CSS Grid para el contenido */
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Columnas adaptativas */
+            gap: 20px; /* Espacio entre los proyectos */
+            padding: 20px; /* Espacio interno */
+        }
+
+        /* Estilo de cada sección de proyecto */
+        .project {
+            background-color: #f4f4f4; /* Color de fondo claro */
+            padding: 20px; /* Espacio interno */
+            border-radius: 8px; /* Bordes redondeados */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+        }
+
+        /* Estilo de las imágenes de los proyectos */
+        .project img {
+            width: 100%; /* Ancho completo del contenedor */
+            height: auto; /* Mantiene la proporción */
+            border-radius: 8px; /* Bordes redondeados */
+        }
+
+        /* Estilo del título en cada proyecto */
+        .project h3 {
+            margin-top: 10px; /* Espacio arriba del título */
+        }
+
+        /* Estilo del texto de cada proyecto */
+        .project p {
+            color: #555; /* Color del texto */
+        }
+
+        /* Estilo del pie de página */
+        footer {
+            grid-row: 3; /* Coloca el pie de página en la tercera fila */
+            background-color: #333; /* Color de fondo oscuro */
+            color: white; /* Color del texto */
+            padding: 10px 20px; /* Espacio interno */
+            text-align: center; /* Alineación centrada del texto */
+        }
+
+        /* Estilo del enlace en el pie de página */
+        footer a {
+            color: white; /* Color del texto */
+            text-decoration: none; /* Elimina subrayado */
+        }
+
+        /* Estilos para dispositivos móviles */
+        @media (max-width: 768px) {
+            nav ul {
+                grid-auto-flow: row; /* Coloca los ítems en columnas para pantallas pequeñas */
+                gap: 10px; /* Espacio reducido entre elementos */
+            }
+
+            nav ul li {
+                margin-left: 0; /* Sin margen a la izquierda */
+                margin-top: 10px; /* Espacio arriba de los ítems de la lista */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <!-- Encabezado con barra de navegación -->
+        <header>
+            <nav>
+                <h1>Mi Portafolio</h1>
+                <ul>
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#projects">Proyectos</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Contenido principal con proyectos -->
+        <main id="projects">
+            <section class="project">
+                <img src="https://via.placeholder.com/300x200" alt="Proyecto 1">
+                <h3>Proyecto 1</h3>
+                <p>Descripción breve del proyecto 1. Explica en pocas palabras de qué trata.</p>
+            </section>
+
+            <section class="project">
+                <img src="https://via.placeholder.com/300x200" alt="Proyecto 2">
+                <h3>Proyecto 2</h3>
+                <p>Descripción breve del proyecto 2. Explica en pocas palabras de qué trata.</p>
+            </section>
+
+            <section class="project">
+                <img src="https://via.placeholder.com/300x200" alt="Proyecto 3">
+                <h3>Proyecto 3</h3>
+                <p>Descripción breve del proyecto 3. Explica en pocas palabras de qué trata.</p>
+            </section>
+        </main>
+
+        <!-- Pie de página con información de contacto -->
+        <footer>
+            <p>© 2024 Mi Nombre. Todos los derechos reservados.</p>
+            <p><a href="mailto:correo@ejemplo.com">correo@ejemplo.com</a></p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animación de Caja Roja</title>
+    <style>
+        /* Estilo básico del cuerpo */
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+
+        /* Estilo de la caja */
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border-radius: 10px;
+            /* Bordes redondeados opcional */
+            animation: bounce 2s infinite;
+        }
+
+        /* Animación de rebote */
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-150px);
+            }
+
+            60% {
+                transform: translateY(-75px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+
+</html>
