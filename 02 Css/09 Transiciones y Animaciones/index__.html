@@ -24,11 +24,14 @@
             cursor: pointer;
             font-size: 18px;
             /* Transition: propiedad (background-color), duración (0.5s), y función de tiempo (ease) */
-            transition: background-color 0.5s ease;
+            transition: background-color 3s ease, transform 2s ease;
+            transform: scale(1);
         }
-
+        
         .btn:hover {
-            background-color: #2ecc71; /* Cambia el color de fondo cuando se hace hover */
+            background-color: #cc2e2e; /* Cambia el color de fondo cuando se hace hover */
+            /*agradar el tamaño al doble en 3 segundos*/
+            transform: scale(2) translateX(100px);         
         }
 
         /*
@@ -41,7 +44,7 @@
                 transform: translateX(0) scale(1); /* Estado inicial */
             }
             50% {
-                transform: translateX(100px) scale(1.5); /* Se mueve 100px a la derecha y se escala al 150% */
+                transform: translateX(200px) scale(1.5); /* Se mueve 100px a la derecha y se escala al 150% */
             }
             100% {
                 transform: translateX(0) scale(1); /* Vuelve a la posición original */

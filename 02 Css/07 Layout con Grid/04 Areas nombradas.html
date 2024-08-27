@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,12 +16,37 @@
             grid-template-rows: 50px 1fr 30px;
             gap: 10px;
         }
-        .header { grid-area: header; background-color: #3F51B5; color: white; padding: 10px; }
-        .sidebar { grid-area: sidebar; background-color: #E91E63; color: white; padding: 10px; }
-        .main { grid-area: main; background-color: #FFC107; color: white; padding: 10px; }
-        .footer { grid-area: footer; background-color: #009688; color: white; padding: 10px; }
+
+        .header {
+            grid-area: header;
+            background-color: #3F51B5;
+            color: white;
+            padding: 10px;
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+            background-color: #E91E63;
+            color: white;
+            padding: 10px;
+        }
+
+        .main {
+            grid-area: main;
+            background-color: #FFC107;
+            color: white;
+            padding: 10px;
+        }
+
+        .footer {
+            grid-area: footer;
+            background-color: #009688;
+            color: white;
+            padding: 10px;
+        }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="header">Header</div>
@@ -30,4 +56,5 @@
     </div>
     <p>Este ejemplo utiliza áreas nombradas para definir un diseño de página más complejo.</p>
 </body>
+
 </html>
