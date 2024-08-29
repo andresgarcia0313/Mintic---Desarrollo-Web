@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables, Tipos de Datos y Operadores en JavaScript</title>
+</head>
+<body>
+    <h1>Variables, Tipos de Datos y Operadores en JavaScript</h1>
+    <p>Este archivo contiene ejemplos claros y explicativos de los conceptos básicos sobre variables, tipos de datos y operadores en JavaScript.</p>
+
+    <script>
+        // 1. Declaración y asignación de variables: var, let, const
+        // =========================================================
+        // 'var' es la forma antigua de declarar variables, se usa en todo el código.
+        var nombre = "Juan"; // Declaración y asignación con 'var'
+        
+        // 'let' es una forma más moderna y su alcance se limita al bloque donde se define.
+        let edad = 25; // Declaración y asignación con 'let'
+        
+        // 'const' se usa para valores que no deben cambiar (constantes).
+        const pais = "Colombia"; // Declaración con 'const'
+        
+        console.log("Nombre:", nombre, "Edad:", edad, "País:", pais);
+
+        // 2. Tipos de datos primitivos: Números, strings, booleanos, null, undefined
+        // =========================================================================
+        // JavaScript tiene varios tipos de datos primitivos:
+        let numero = 100; // Número
+        let cadena = "Hola, Mundo"; // String (cadena de texto)
+        let esVerdad = true; // Booleano (true o false)
+        let vacio = null; // Valor nulo
+        let indefinido; // undefined, variable sin valor asignado
+
+        console.log("Número:", numero);
+        console.log("Cadena:", cadena);
+        console.log("Booleano:", esVerdad);
+        console.log("Nulo:", vacio);
+        console.log("Indefinido:", indefinido);
+
+        // 3. Operadores aritméticos: Suma, resta, multiplicación, división, módulo
+        // =========================================================================
+        // Los operadores aritméticos básicos incluyen:
+        let suma = 10 + 5; // Suma
+        let resta = 10 - 5; // Resta
+        let multiplicacion = 10 * 5; // Multiplicación
+        let division = 10 / 5; // División
+        let modulo = 10 % 3; // Módulo (resto de la división)
+
+        console.log("Suma:", suma);
+        console.log("Resta:", resta);
+        console.log("Multiplicación:", multiplicacion);
+        console.log("División:", division);
+        console.log("Módulo:", modulo);
+
+        // 4. Operadores de asignación: =, +=, -=, *=, /=, etc.
+        // ====================================================
+        // Los operadores de asignación se usan para asignar valores a las variables:
+        let x = 10; // Asignación básica
+        x += 5; // Equivale a x = x + 5
+        x -= 3; // Equivale a x = x - 3
+        x *= 2; // Equivale a x = x * 2
+        x /= 4; // Equivale a x = x / 4
+
+        console.log("Valor final de x:", x);
+
+        // 5. Operadores de comparación: ==, ===, !=, !==, >, <, >=, <=
+        // ===========================================================
+        // Los operadores de comparación se usan para comparar valores:
+        let esIgual = (5 == "5"); // Compara el valor, no el tipo (true)
+        let esEstrictamenteIgual = (5 === "5"); // Compara el valor y el tipo (false)
+        let esDiferente = (5 != "6"); // Compara si los valores son diferentes (true)
+        let esEstrictamenteDiferente = (5 !== "5"); // Compara si los valores y tipos son diferentes (true)
+        let mayorQue = (10 > 5); // Mayor que (true)
+        let menorQue = (5 < 10); // Menor que (true)
+        let mayorOIgual = (10 >= 10); // Mayor o igual que (true)
+        let menorOIgual = (5 <= 10); // Menor o igual que (true)
+
+        console.log("Igualdad (==):", esIgual);
+        console.log("Igualdad estricta (===):", esEstrictamenteIgual);
+        console.log("Diferencia (!=):", esDiferente);
+        console.log("Diferencia estricta (!==):", esEstrictamenteDiferente);
+        console.log("Mayor que (>):", mayorQue);
+        console.log("Menor que (<):", menorQue);
+        console.log("Mayor o igual (>=):", mayorOIgual);
+        console.log("Menor o igual (<=):", menorOIgual);
+
+        // 6. Operadores lógicos: &&, ||, !
+        // ================================
+        // Los operadores lógicos se usan para combinar expresiones:
+        let and = (5 > 3 && 10 > 8); // && (AND): true si ambas expresiones son verdaderas
+        let or = (5 > 3 || 10 < 8); // || (OR): true si al menos una expresión es verdadera
+        let not = !(5 > 3); // ! (NOT): invierte el valor booleano
+
+        console.log("AND (&&):", and);
+        console.log("OR (||):", or);
+        console.log("NOT (!):", not);
+
+        // 7. Concatenación de strings: Métodos y mejores prácticas
+        // =========================================================
+        // La concatenación une varias cadenas de texto:
+        let saludo = "Hola";
+        let nombreCompleto = saludo + ", " + nombre + "!"; // Concatenación usando '+'
+        
+        // ES6 introdujo una forma más moderna y clara de concatenar usando template strings:
+        let mensajeCompleto = `${saludo}, ${nombre}! Bienvenido a JavaScript.`; // Template string
+
+        console.log("Concatenación tradicional:", nombreCompleto);
+        console.log("Template string (ES6):", mensajeCompleto);
+
+        // 8. Conversión de tipos: Implicita y explicita (parseInt, parseFloat, toString)
+        // ==============================================================================
+        // Conversión implícita ocurre automáticamente cuando JavaScript cambia el tipo de datos.
+        let conversionImplicita = "5" * 2; // JS convierte automáticamente "5" a número
+
+        // Conversión explícita requiere una función como parseInt, parseFloat o toString.
+        let numeroEntero = parseInt("42"); // Convierte string a entero
+        let numeroDecimal = parseFloat("3.14"); // Convierte string a decimal
+        let numeroComoTexto = (42).toString(); // Convierte número a string
+
+        console.log("Conversión implícita:", conversionImplicita);
+        console.log("Conversión explícita a entero:", numeroEntero);
+        console.log("Conversión explícita a decimal:", numeroDecimal);
+        console.log("Conversión a string:", numeroComoTexto);
+
+        // 9. Ámbito de las variables: Alcance global vs. local
+        // ====================================================
+        // Las variables pueden tener un alcance global (disponible en todo el código)
+        // o local (disponible solo dentro de una función o bloque).
+
+        var global = "Soy global"; // Esta variable es accesible en cualquier parte del código
+
+        function miFuncion() {
+            let local = "Soy local"; // Esta variable solo es accesible dentro de esta función
+            console.log(global); // Puede acceder a la variable global
+            console.log(local); // Puede acceder a la variable local
+        }
+
+        miFuncion();
+        // console.log(local); // Esto generará un error porque 'local' no está definida fuera de la función
+
+        // 10. Buenas prácticas de nomenclatura: Convenciones para nombres claros y mantenibles
+        // ===================================================================================
+        // Es importante usar nombres de variables claros y descriptivos.
+        // Convención común: camelCase para variables y funciones (ej: nombreCompleto)
+        // Evitar abreviaciones innecesarias y nombres ambiguos.
+
+        let contadorDeClicks = 0; // Nombre descriptivo que indica claramente su propósito
+        let usuarioActivo = true; // Indica si un usuario está activo, claro y directo
+
+        console.log("Buenas prácticas: Nombres claros y descriptivos");
+    </script>
+</body>
+</html>

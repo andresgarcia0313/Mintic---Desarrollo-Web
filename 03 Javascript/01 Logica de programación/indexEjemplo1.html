@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejemplos de Lógica de Programación en JavaScript</title>
+  </head>
+  <body>
+    <h1>Ejemplos de Lógica de Programación en JavaScript</h1>
+
+    <script>
+      // Algoritmos y Pseudocódigo
+      // Problema: Encontrar el máximo de dos números
+      // a=2 y b=5
+      // Pseudocódigo:
+      // Si a > b entonces
+      //    máximo = a
+      // Sino
+      //    máximo = b
+      // Fin Si
+      function encontrarMaximo(a, b) {
+        let maximo;
+        if (a > b) {
+          maximo = a;
+        } else {
+          maximo = b;
+        }
+        console.log("El máximo entre " + a + " y " + b + " es: " + maximo);
+      }
+      let edadMayor;
+      encontrarMaximo(10, 20);
+      encontrarMaximo(25, 5);
+
+      // Diagramas de flujo: (Representado en código)
+      // Ejemplo de flujo de decisiones con if-else
+      function evaluarNota(nota) {
+        if (nota >= 90) {
+          console.log("Sobresaliente");
+        } else if (nota >= 70) {
+          console.log("Aprobado");
+        } else {
+          console.log("Reprobado");
+        }
+      }
+      evaluarNota(85);
+
+      // Operadores lógicos: AND, OR, NOT
+      function verificarAcceso(edad, tienePermiso) {
+        if (edad >= 18 && tienePermiso) {
+          console.log("Acceso permitido");
+        } else {
+          console.log("Acceso denegado");
+        }
+      }
+      verificarAcceso(20, true); // Acceso permitido
+      verificarAcceso(16, false); // Acceso denegado
+
+      // Estructuras secuenciales: Ejecución en orden
+      function secuencia() {
+        let x = 10;
+        x = x + 5;
+        console.log("Valor de x después de la secuencia: " + x); // 15
+      }
+      secuencia();
+
+      // Condiciones y decisiones: if, else, else if, operadores ternarios
+      function evaluarCondiciones(valor) {
+        let resultado = valor > 10 ? "Mayor que 10" : "Menor o igual a 10";
+        console.log("Resultado: " + resultado);
+      }
+      evaluarCondiciones(12); // Mayor que 10
+
+      // Bucles y repeticiones: WHILE, DO-WHILE, FOR
+      function bucles() {
+        // Bucle FOR
+        for (let i = 0; i < 5; i++) {
+          console.log("FOR Loop: " + i);
+        }
+
+        // Bucle WHILE
+        let j = 0;
+        while (j < 5) {
+          console.log("WHILE Loop: " + j);
+          j++;
+        }
+
+        // Bucle DO-WHILE
+        let k = 0;
+        do {
+          console.log("DO-WHILE Loop: " + k);
+          k++;
+        } while (k < 5);
+      }
+      bucles();
+
+      // Depuración básica: Uso de console.log para depurar
+      function depuracion() {
+        let a = 10;
+        let b = 20;
+        let suma = a + b;
+        console.log("Suma de " + a + " y " + b + " es: " + suma); // Depuración
+      }
+      depuracion();
+
+      // Análisis de complejidad: Comparación de dos algoritmos
+      function sumaSimple(n) {
+        let suma = 0;
+        for (let i = 1; i <= n; i++) {
+          suma += i;
+        }
+        return suma; // O(n)
+      }
+
+      function sumaDirecta(n) {
+        return (n * (n + 1)) / 2; // O(1)
+      }
+      console.log("Suma simple de 10 es: " + sumaSimple(10));
+      console.log("Suma directa de 10 es: " + sumaDirecta(10));
+
+      // Recursión: Ejemplo con factorial
+      function factorial(n) {
+        if (n === 0 || n === 1) {
+          return 1;
+        } else {
+          return n * factorial(n - 1);
+        }
+      }
+      console.log("Factorial de 5 es: " + factorial(5)); // 120
+
+      // Optimización de código: Evitar cálculos innecesarios
+      function calcularPotencia(base, exponente) {
+        if (exponente === 0) {
+          return 1;
+        } else if (exponente === 1) {
+          return base;
+        } else {
+          return base ** exponente;
+        }
+      }
+      console.log("2 elevado a la 3 es: " + calcularPotencia(2, 3)); // 8
+    </script>
+  </body>
+</html>

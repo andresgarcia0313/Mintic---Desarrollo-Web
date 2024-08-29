@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones y Alcance en JavaScript</title>
+</head>
+<body>
+    <h1>Aprendiendo Funciones y Alcance en JavaScript</h1>
+    <p>Este archivo muestra ejemplos básicos de funciones y su alcance en JavaScript, con explicaciones incluidas.</p>
+
+    <script>
+        // 1. Definición y declaración de funciones
+        // ========================================
+        // Las funciones en JavaScript se definen utilizando la palabra clave `function`.
+        // Pueden recibir parámetros y realizar operaciones con ellos.
+
+        function saludar(nombre) {
+            console.log("Hola, " + nombre + "!");
+        }
+        saludar("Carlos"); // Llama a la función con el argumento "Carlos"
+
+        // 2. Funciones anónimas y flecha (Arrow functions)
+        // ===============================================
+        // Las funciones anónimas no tienen nombre y suelen usarse en callbacks.
+        // Las arrow functions (`=>`) son una sintaxis más corta y tienen un comportamiento de `this` diferente.
+
+        const sumaAnonima = function(a, b) {
+            return a + b;
+        };
+        console.log("Suma anónima: " + sumaAnonima(3, 5));
+
+        const sumaFlecha = (a, b) => a + b; // Arrow function
+        console.log("Suma con función flecha: " + sumaFlecha(3, 5));
+
+        // 3. Retorno de valores
+        // =====================
+        // Las funciones pueden devolver un valor utilizando la palabra clave `return`.
+
+        function multiplicar(x, y) {
+            return x * y; // Devuelve el resultado de la multiplicación
+        }
+        let resultadoMultiplicacion = multiplicar(4, 5);
+        console.log("Resultado de multiplicación: " + resultadoMultiplicacion);
+
+        // 4. Parámetros y argumentos
+        // ==========================
+        // Parámetros son las variables en la definición de la función.
+        // Argumentos son los valores que se pasan cuando se llama a la función.
+        // También podemos definir valores predeterminados para los parámetros.
+
+        function saludarConTitulo(nombre, titulo = "Sr./Sra.") {
+            console.log("Hola, " + titulo + " " + nombre);
+        }
+        saludarConTitulo("García"); // Usa el valor predeterminado para `titulo`
+        saludarConTitulo("López", "Dr."); // Pasa un valor específico para `titulo`
+
+        // 5. Ámbito de las variables dentro de funciones (Scope)
+        // ======================================================
+        // El ámbito de una variable define dónde es accesible en el código.
+        // - Global: Accesible en todo el código.
+        // - Local: Accesible solo dentro de la función donde se define.
+
+        let globalVar = "Soy global";
+
+        function mostrarAlcance() {
+            let localVar = "Soy local";
+            console.log(globalVar); // Puede acceder a la variable global
+            console.log(localVar);  // Puede acceder a la variable local
+        }
+        mostrarAlcance();
+        // console.log(localVar); // Esto daría error porque `localVar` no es accesible fuera de la función
+
+        // 6. Funciones de orden superior
+        // ==============================
+        // Son funciones que pueden recibir otras funciones como argumentos o devolverlas.
+
+        function operacionMatematica(x, y, operacion) {
+            return operacion(x, y); // Llama a la función pasada como argumento
+        }
+
+        let suma = operacionMatematica(10, 20, (a, b) => a + b);
+        console.log("Resultado de la suma con función de orden superior: " + suma);
+
+        let resta = operacionMatematica(10, 20, (a, b) => a - b);
+        console.log("Resultado de la resta con función de orden superior: " + resta);
+
+        // 7. IIFE (Immediately Invoked Function Expressions)
+        // ==================================================
+        // Son funciones que se ejecutan inmediatamente después de ser definidas.
+        // Se utilizan para evitar contaminar el ámbito global.
+
+        (function() {
+            console.log("Esto es una IIFE, se ejecuta de inmediato");
+        })();
+
+        // 8. Recursividad en funciones
+        // ============================
+        // La recursividad es cuando una función se llama a sí misma.
+        // Es útil para resolver problemas que se pueden dividir en subproblemas similares.
+
+        function factorial(n) {
+            if (n <= 1) return 1;
+            return n * factorial(n - 1); // Llama a sí misma con `n-1`
+        }
+        console.log("Factorial de 5: " + factorial(5)); // Muestra 120
+
+        // 9. Closures
+        // ===========
+        // Un closure es una función que recuerda el estado de su entorno léxico.
+        // Esto permite que una función interna acceda a variables de una función externa, incluso después de que esta última haya finalizado.
+
+        function crearContador() {
+            let cuenta = 0;
+            return function() {
+                cuenta += 1;
+                return cuenta;
+            };
+        }
+
+        const contador = crearContador(); // `contador` es un closure
+        console.log("Contador: " + contador()); // Muestra 1
+        console.log("Contador: " + contador()); // Muestra 2
+
+        // 10. Modularidad del código
+        // ==========================
+        // Dividir el código en funciones reutilizables ayuda a mantenerlo limpio y organizado.
+        // Es una buena práctica crear funciones que realicen tareas específicas y luego combinarlas para resolver problemas más grandes.
+
+        function obtenerAreaRectangulo(base, altura) {
+            return base * altura;
+        }
+
+        function imprimirAreaRectangulo(base, altura) {
+            const area = obtenerAreaRectangulo(base, altura);
+            console.log("El área del rectángulo es: " + area);
+        }
+
+        imprimirAreaRectangulo(5, 10); // Llama a la función que calcula e imprime el área
+    </script>
+</body>
+</html>

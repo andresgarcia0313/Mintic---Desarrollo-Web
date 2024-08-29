@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducción a JavaScript</title>
+</head>
+<body>
+    <h1>Introducción a JavaScript</h1>
+    <p>Este ejemplo cubre los conceptos básicos de JavaScript, incluyendo su historia, sintaxis, y uso práctico.</p>
+
+    <script>
+        // 1. Historia y evolución de JavaScript
+        // =====================================
+        // JavaScript fue creado en 1995 por Brendan Eich en solo 10 días.
+        // Inicialmente se llamaba Mocha, luego LiveScript, y finalmente JavaScript.
+        // Es el lenguaje de programación esencial para la web, ejecutándose en el navegador
+        // para añadir interactividad a las páginas web.
+
+        // 2. Sintaxis básica
+        // =====================================
+        // JavaScript es un lenguaje sensible a mayúsculas y minúsculas.
+        // Las instrucciones generalmente terminan con un punto y coma (;).
+        // Aquí se muestra cómo declarar variables, asignar valores, y mostrar mensajes.
+
+        var mensaje = "Hola, Mundo"; // Declaración de una variable (var es una palabra reservada)
+        let numero = 42; // Declaración de una variable usando 'let' (ES6)
+        const PI = 3.1416; // Constante que no puede ser reasignada
+
+        console.log(mensaje); // Imprime "Hola, Mundo" en la consola del navegador
+        console.log("El valor de PI es:", PI); // Imprime el valor de PI
+
+        // 3. Configuración del entorno de desarrollo
+        // =====================================
+        // Para escribir y probar código JavaScript, se recomienda usar un editor de texto
+        // como Visual Studio Code o Sublime Text. El código se ejecuta en el navegador
+        // al abrir un archivo HTML que incluye un script JS, como este archivo.
+
+        // 4. Consola de desarrollador
+        // =====================================
+        // La consola del navegador es una herramienta esencial para los desarrolladores web.
+        // Puedes abrirla con F12 en la mayoría de los navegadores.
+        // Se usa para probar código, depurar errores y ver mensajes como los generados
+        // por console.log().
+
+        // 5. Ejecución de código JavaScript
+        // =====================================
+        // Hay varias formas de ejecutar JavaScript:
+        // - Inline: Código JS dentro de etiquetas <script> en un archivo HTML (como en este ejemplo).
+        // - Archivo separado: Código JS en un archivo .js externo y enlazado desde el HTML.
+        // - En el navegador: Probar código directamente en la consola del navegador.
+
+        // Ejemplo de código inline (como este):
+        console.log("Este código se ejecuta inline dentro de un archivo HTML.");
+
+        // Ejemplo de archivo separado:
+        // <script src="script.js"> <script>
+        // El archivo script.js contendría el código JavaScript.
+
+        // 6. Interactividad con HTML y CSS
+        // =====================================
+        // JavaScript puede manipular el DOM (Document Object Model) para cambiar
+        // dinámicamente el contenido y estilo de una página web.
+
+        // Ejemplo: Cambiar el contenido de un elemento HTML usando JavaScript
+        let parrafo = document.createElement('p'); // Crear un nuevo párrafo
+        parrafo.textContent = "Este párrafo fue creado y añadido con JavaScript."; // Asignar texto
+        document.body.appendChild(parrafo); // Añadir el párrafo al cuerpo del documento
+
+        // 7. Comentarios y buenas prácticas
+        // =====================================
+        // Es importante comentar el código para explicar qué hace cada sección.
+        // Los comentarios pueden ser de una línea o de múltiples líneas.
+
+        // Este es un comentario de una sola línea.
+
+        /* 
+        Este es un comentario de 
+        múltiples líneas.
+        */
+
+        // Buenas prácticas:
+        // - Usar nombres de variables descriptivos.
+        // - Mantener el código limpio y bien formateado.
+        // - Evitar el uso excesivo de comentarios innecesarios.
+
+        // 8. Errores comunes en JavaScript
+        // =====================================
+        // Algunos errores comunes incluyen:
+        // - Olvidar el punto y coma al final de una instrucción.
+        // - Uso incorrecto de variables no declaradas.
+        // - Problemas de alcance con variables declaradas con var vs let.
+
+        // Ejemplo de un error común:
+        // Intentar usar una variable antes de declararla:
+        // console.log(antesDeDeclarar); // Uncaught ReferenceError
+        // let antesDeDeclarar = "Declarado después"; 
+
+        // 9. Comparación con otros lenguajes
+        // =====================================
+        // JavaScript tiene similitudes y diferencias con otros lenguajes de programación como Python y Java.
+        // - Como Python, JavaScript es dinámicamente tipado, lo que significa que no necesitas declarar el tipo de variable.
+        // - A diferencia de Java, JavaScript no requiere la compilación antes de ejecutarse, ya que es interpretado por el navegador.
+
+        // Ejemplo:
+        let saludoPython = "Hola" + " " + "Mundo"; // Concatenación de strings (similar a Python)
+        console.log(saludoPython);
+
+        // 10. Fuentes de referencia y documentación
+        // =====================================
+        // Es fundamental saber dónde encontrar información confiable y detallada sobre JavaScript.
+        // Las mejores fuentes incluyen:
+        // - MDN Web Docs: https://developer.mozilla.org/es/docs/Web/JavaScript
+        // - W3Schools: https://www.w3schools.com/js/
+
+        console.log("Visita MDN Web Docs y W3Schools para aprender más sobre JavaScript.");
+    </script>
+</body>
+</html>

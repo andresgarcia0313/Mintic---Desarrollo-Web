@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo Educativo de JavaScript</title>
+</head>
+<body>
+    <h1>Aprendiendo Lógica de Programación con JavaScript</h1>
+    <p>Este ejemplo cubre conceptos básicos de lógica de programación utilizando JavaScript.</p>
+
+    <script>
+        // Algoritmos y Pseudocódigo
+        // =====================================
+        // Un algoritmo es un conjunto de pasos para resolver un problema.
+        // Ejemplo de algoritmo para encontrar el número mayor entre dos números:
+
+        // Pseudocódigo:
+        // 1. Tomar dos números como entrada
+        // 2. Comparar ambos números
+        // 3. Imprimir cuál es el mayor
+
+        let num1 = 10;
+        let num2 = 20;
+
+        // Implementación del algoritmo en JavaScript:
+        if (num1 > num2) {
+            console.log(num1 + " es mayor que " + num2);
+        } else {
+            console.log(num2 + " es mayor que " + num1);
+        }
+
+        // Diagramas de flujo
+        // =====================================
+        // Un diagrama de flujo es una representación visual de un algoritmo.
+        // En este ejemplo, la decisión sobre cuál número es mayor se representaría
+        // con un rombo (decisión) que tiene dos salidas: verdadero o falso.
+        // Aquí lo implementamos con la estructura condicional IF.
+
+        // Operadores Lógicos
+        // =====================================
+        // Los operadores lógicos permiten combinar condiciones:
+        // AND (&&), OR (||), NOT (!)
+
+        let a = true;
+        let b = false;
+
+        // Ejemplo de uso de AND y OR:
+        if (a && b) {
+            console.log("Ambas condiciones son verdaderas");
+        } else if (a || b) {
+            console.log("Al menos una condición es verdadera");
+        } else {
+            console.log("Ninguna condición es verdadera");
+        }
+
+        // NOT invierte el valor de una condición:
+        if (!b) {
+            console.log("b es falso");
+        }
+
+        // Estructuras secuenciales
+        // =====================================
+        // Las estructuras secuenciales ejecutan código en el orden en que aparece.
+
+        console.log("Este es el primer paso");
+        console.log("Este es el segundo paso");
+        console.log("Este es el tercer paso");
+
+        // Condiciones y decisiones
+        // =====================================
+        // Las condiciones permiten que el programa tome decisiones
+        // basado en ciertas condiciones.
+
+        let edad = 18;
+
+        if (edad >= 18) {
+            console.log("Eres mayor de edad");
+        } else if (edad >= 13) {
+            console.log("Eres un adolescente");
+        } else {
+            console.log("Eres un niño");
+        }
+
+        // Bucles y repeticiones
+        // =====================================
+        // Los bucles permiten ejecutar un bloque de código repetidamente.
+
+        // Ejemplo de bucle FOR:
+        for (let i = 0; i < 5; i++) {
+            console.log("Este es el bucle FOR, iteración: " + i);
+        }
+
+        // Ejemplo de bucle WHILE:
+        let count = 0;
+        while (count < 3) {
+            console.log("Este es el bucle WHILE, iteración: " + count);
+            count++;
+        }
+
+        // Ejemplo de bucle DO-WHILE:
+        let counter = 0;
+        do {
+            console.log("Este es el bucle DO-WHILE, iteración: " + counter);
+            counter++;
+        } while (counter < 2);
+
+        // Depuración básica
+        // =====================================
+        // La depuración es el proceso de identificar y corregir errores en el código.
+        // Una técnica simple es utilizar console.log() para imprimir valores y entender
+        // qué está ocurriendo en el código.
+
+        let testVariable = 10;
+        console.log("Valor de testVariable:", testVariable);
+
+        // Análisis de complejidad
+        // =====================================
+        // La complejidad de un algoritmo evalúa su eficiencia, generalmente en
+        // términos de tiempo (número de operaciones) y espacio (memoria usada).
+
+        // Ejemplo simple: Comparación entre una búsqueda lineal y una binaria
+        // (comentado porque es avanzado para principiantes).
+
+        // Recursión
+        // =====================================
+        // La recursión es una técnica donde una función se llama a sí misma.
+        // Ejemplo clásico: Factorial de un número.
+
+        function factorial(n) {
+            if (n <= 1) {
+                return 1;
+            } else {
+                return n * factorial(n - 1);
+            }
+        }
+
+        console.log("Factorial de 5 es: " + factorial(5));
+
+        // Optimización de código
+        // =====================================
+        // La optimización se refiere a escribir código que sea más eficiente en
+        // términos de tiempo y recursos.
+
+        // Ejemplo: Uso de variables en bucles para evitar cálculos repetidos.
+        let array = [1, 2, 3, 4, 5];
+        let arrayLength = array.length; // Optimización
+
+        for (let i = 0; i < arrayLength; i++) {
+            console.log("Elemento en array[" + i + "]: " + array[i]);
+        }
+    </script>
+</body>
+</html>

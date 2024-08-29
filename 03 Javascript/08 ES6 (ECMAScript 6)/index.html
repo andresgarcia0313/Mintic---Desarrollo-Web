@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducción a ES6 en JavaScript</title>
+</head>
+<body>
+    <h1>Conceptos Clave de ES6 (ECMAScript 6)</h1>
+    <p>Este archivo muestra ejemplos y explicaciones sobre las características principales de ES6 en JavaScript.</p>
+
+    <script>
+        // 1. let y const
+        // ===============
+        // let y const son nuevas formas de declarar variables en ES6.
+        // let permite declarar variables cuyo valor puede cambiar, mientras que const declara variables cuyo valor es constante.
+
+        let variableLet = 'Valor inicial';
+        const variableConst = 'Valor constante';
+
+        console.log('Valor de variableLet:', variableLet);
+        console.log('Valor de variableConst:', variableConst);
+
+        // Modificando variableLet
+        variableLet = 'Nuevo valor';
+        console.log('Nuevo valor de variableLet:', variableLet);
+
+        // Intentando modificar variableConst (esto causará un error si se descomenta)
+        // variableConst = 'Intento de cambio'; // Descomentar para ver el error
+
+        // 2. Arrow Functions
+        // ===================
+        // Las arrow functions tienen una sintaxis más concisa y no tienen su propio contexto `this`.
+
+        const suma = (a, b) => a + b;
+        console.log('Suma de 5 y 3:', suma(5, 3));
+
+        // 3. Template Strings
+        // ===================
+        // Los template strings permiten interpolar variables y expresiones dentro de cadenas usando `` (backticks).
+
+        const nombre = 'Juan';
+        const edad = 30;
+        console.log(`Nombre: ${nombre}, Edad: ${edad}`);
+
+        // 4. Desestructuración
+        // =====================
+        // La desestructuración permite extraer valores de objetos y arrays en variables distintas.
+
+        const persona = { nombre: 'Ana', edad: 25 };
+        const { nombre: nombrePersona, edad: edadPersona } = persona;
+        console.log('Nombre:', nombrePersona, 'Edad:', edadPersona);
+
+        const numeros = [1, 2, 3];
+        const [uno, dos, tres] = numeros;
+        console.log('Números:', uno, dos, tres);
+
+        // 5. Spread Operator
+        // ===================
+        // El spread operator se usa para copiar o combinar arrays y objetos.
+
+        const array1 = [1, 2, 3];
+        const array2 = [4, 5, 6];
+        const combinado = [...array1, ...array2];
+        console.log('Array combinado:', combinado);
+
+        const objeto1 = { a: 1 };
+        const objeto2 = { b: 2 };
+        const combinadoObjetos = { ...objeto1, ...objeto2 };
+        console.log('Objeto combinado:', combinadoObjetos);
+
+        // 6. Rest Parameters
+        // ===================
+        // Los rest parameters permiten a una función recibir un número variable de argumentos.
+
+        function sumar(...numeros) {
+            return numeros.reduce((acumulado, num) => acumulado + num, 0);
+        }
+        console.log('Suma de 1, 2, 3, 4, 5:', sumar(1, 2, 3, 4, 5));
+
+        // 7. Clases en ES6
+        // ==================
+        // ES6 introduce la sintaxis de clases para la programación orientada a objetos.
+
+        class Animal {
+            constructor(nombre) {
+                this.nombre = nombre;
+            }
+
+            saludar() {
+                console.log(`Hola, soy ${this.nombre}`);
+            }
+        }
+
+        const perro = new Animal('Rex');
+        perro.saludar();
+
+        // 8. Módulos en ES6
+        // ===================
+        // Los módulos permiten importar y exportar código para mejorar la modularidad y el mantenimiento.
+
+        // Ejemplo simplificado para demostrar la importación y exportación
+        // En un archivo real, exportarías desde un archivo .js y lo importarías en otro.
+
+        // Exportar desde archivo1.js:
+        // export default function saludo() {
+        //     console.log('Hola desde un módulo');
+        // }
+
+        // Importar en otro archivo:
+        // import saludo from './archivo1.js';
+        // saludo();
+
+        // 9. Promises en ES6
+        // =====================
+        // Las Promesas en ES6 tienen una sintaxis mejorada para manejar operaciones asíncronas.
+
+        const promesa = new Promise((resolve, reject) => {
+            setTimeout(() => resolve('Promesa completada'), 1000);
+        });
+
+        promesa.then(mensaje => console.log(mensaje))
+               .catch(error => console.error('Error en la promesa:', error));
+
+        // 10. Map, Set, WeakMap, WeakSet
+        // ===============================
+        // ES6 introduce nuevas estructuras de datos para manejar colecciones de datos.
+
+        // Map: Colección de pares clave-valor
+        const mapa = new Map();
+        mapa.set('clave1', 'valor1');
+        mapa.set('clave2', 'valor2');
+        console.log('Mapa:', mapa);
+
+        // Set: Colección de valores únicos
+        const conjunto = new Set([1, 2, 2, 3]);
+        console.log('Conjunto:', conjunto);
+
+        // WeakMap: Mapa con claves de objetos y sin referencia fuerte
+        const weakmap = new WeakMap();
+        const objetoClave = {};
+        weakmap.set(objetoClave, 'valor asociado');
+        console.log('WeakMap:', weakmap);
+
+        // WeakSet: Conjunto con valores de objetos y sin referencia fuerte
+        const weakset = new WeakSet();
+        weakset.add(objetoClave);
+        console.log('WeakSet:', weakset);
+
+    </script>
+</body>
+</html>
