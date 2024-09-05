@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de acumulador</title>
+    <meta charset="UTF-8">
+    
+</head>
+
+<body>
+
+    <script>
+        let x = 1;
+        let acumulador = 0;
+        let valor;
+        while (x <= 5) {
+            valor = parseInt(prompt('Ingrese dinero:'));
+            acumulador = acumulador + valor;
+            x = x + 1;
+            if(acumulador > 100) {
+                x = 6;
+            }
+            
+        }
+        document.write('La suma de los dineros es ' + acumulador + '<br>');
+    </script>
+
+</body>
+
+</html>

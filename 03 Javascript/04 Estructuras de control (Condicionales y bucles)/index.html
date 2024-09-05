@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For</title>
+  </head>
+
+  <body>
+    <h1>for of mira el codigo!</h1>
+    <script>
+      //for of       //0  1  2  3  4
+      var elementos = [1, 2, 3, 4, 5];
+      document.write("lista o array en la posición 2:");
+      document.write(elementos[2]);
+      document.write("<br>");
+      document.write("lista o array en todas las posiciones:");
+      for (let elemento of elementos) document.write(elemento + " ");
+      document.write("<br>");
+
+      document.write("array en todas las posiciones mostrandose con for of:");
+      for (let elemento of [1, 2, 3, 4, 5]) document.write(elemento + " ");
+
+      document.write("<br>");
+      document.write("lista o array en la posición 2:");
+      document.write(elementos[2]);
+      for (let index in elementos) document.write(elementos[index] + " "); // Usa 'elementos[index]' en lugar de 'elemento'
+
+      for (let i in elementos) document.write(elementos[i] + " "); // Usa 'elementos[index]' en lugar de 'elemento'
+
+      document.write("<br>");
+
+      for (let index in elementos)
+        if (index % 2 == 0) document.write(elementos[index]);
+    </script>
+  </body>
+</html>

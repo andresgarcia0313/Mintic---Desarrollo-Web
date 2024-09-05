@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios Avanzados de JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h2 {
+            color: #333;
+        }
+        .result {
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejercicios Avanzados de JavaScript</h1>
+
+    <h2>1. Validación de un Objeto de Configuración</h2>
+    <div class="result" id="configResult"></div>
+
+    <h2>2. Filtrado Condicional de Usuarios</h2>
+    <div class="result" id="userFilterResult"></div>
+
+    <h2>3. Detección de Errores en Datos Anidados</h2>
+    <div class="result" id="dataValidationResult"></div>
+
+    <h2>4. Sistema de Acceso con Autenticación Avanzada</h2>
+    <div class="result" id="accessControlResult"></div>
+
+    <h2>5. Control de Flujos con Fallbacks</h2>
+    <div class="result" id="flowControlResult"></div>
+
+    <script>
+        // Ejercicio 1: Validación de un Objeto de Configuración
+        const config = {
+            database: "my_db",
+            username: "admin",
+            password: "admin123",
+            host: "localhost",
+            port: 5432,
+            debug: true
+        };
+
+        function validateConfig(config) {
+            if (typeof config !== 'object' || config === null) {
+                return "La configuración debe ser un objeto válido.";
+            }
+
+            if (typeof config.database !== 'string' || config.database === '') {
+                return "El nombre de la base de datos debe ser una cadena no vacía.";
+            }
+
+            if (typeof config.username !== 'string' || config.username === '') {
+                return "El nombre de usuario debe ser una cadena no vacía.";
+            }
+
+            if (typeof config.password !== 'string' || config.password === '') {
+                return "La contraseña debe ser una cadena no vacía.";
+            }
+
+            if (typeof config.host !== 'string' || config.host === '') {
+                return "El host debe ser una cadena no vacía.";
+            }
+
+            if (typeof config.port !== 'number' || config.port <= 0) {
+                return "El puerto debe ser un número positivo.";
+            }
+
+            if (typeof config.debug !== 'boolean') {
+                return "El valor de debug debe ser un booleano.";
+            }
+
+            return "La configuración es válida.";
+        }
+
+        document.getElementById('configResult').textContent = validateConfig(config);
+
+        // Ejercicio 2: Filtrado Condicional de Usuarios
+        const users = [
+            { name: "Alice", age: 25, isActive: true, role: "admin" },
+            { name: "Bob", age: 30, isActive: false, role: "user" },
+            { name: "Charlie", age: 35, isActive: true, role: "user" },
+            { name: "Dave", age: 40, isActive: false, role: "admin" }
+        ];
+
+        function filterUsers(users) {
+            return users.filter(user => {
+                if (user.isActive && user.age > 30 && user.role === "user") {
+                    return true;
+                }
+                return false;
+            });
+        }
+
+        document.getElementById('userFilterResult').textContent = JSON.stringify(filterUsers(users), null, 2);
+
+        // Ejercicio 3: Detección de Errores en Datos Anidados
+        const data = {
+            user: {
+                name: "Alice",
+                age: 25,
+                email: "alice@example.com",
+                preferences: {
+                    theme: "dark",
+                    notifications: {
+                        email: true,
+                        sms: false
+                    }
+                }
+            }
+        };
+
+        function validateData(data) {
+            if (!data.user) {
+                return "El objeto debe contener un campo de usuario.";
+            }
+
+            if (typeof data.user.name !== 'string' || data.user.name === '') {
+                return "El nombre de usuario debe ser una cadena no vacía.";
+            }
+
+            if (typeof data.user.age !== 'number' || data.user.age <= 0) {
+                return "La edad debe ser un número positivo.";
+            }
+
+            if (typeof data.user.email !== 'string' || !data.user.email.includes('@')) {
+                return "El correo electrónico no es válido.";
+            }
+
+            if (data.user.preferences) {
+                if (data.user.preferences.notifications) {
+                    if (typeof data.user.preferences.notifications.email !== 'boolean') {
+                        return "Las notificaciones por correo deben ser booleanas.";
+                    }
+
+                    if (typeof data.user.preferences.notifications.sms !== 'boolean') {
+                        return "Las notificaciones por SMS deben ser booleanas.";
+                    }
+                }
+            }
+
+            return "Los datos son válidos.";
+        }
+
+        document.getElementById('dataValidationResult').textContent = validateData(data);
+
+        // Ejercicio 4: Sistema de Acceso con Autenticación Avanzada
+        const user = {
+            username: "Alice",
+            role: "admin",
+            isLoggedIn: true
+        };
+
+        const currentHour = new Date().getHours();
+
+        function canAccessResource(user, currentHour) {
+            if (!user.isLoggedIn) {
+                return "Acceso denegado: el usuario no ha iniciado sesión.";
+            }
+
+            if (user.role !== "admin") {
+                return "Acceso denegado: se requiere el rol de administrador.";
+            }
+
+            if (currentHour < 9 || currentHour > 17) {
+                return "Acceso denegado: el recurso solo está disponible durante el horario de oficina.";
+            }
+
+            return "Acceso concedido.";
+        }
+
+        document.getElementById('accessControlResult').textContent = canAccessResource(user, currentHour);
+
+        // Ejercicio 5: Control de Flujos con Fallbacks
+        function performOperations() {
+            let result = operation1();
+
+            if (!result.success) {
+                return fallbackOperation1();
+            }
+
+            result = operation2();
+            if (!result.success) {
+                return fallbackOperation2();
+            }
+
+            result = operation3();
+            if (!result.success) {
+                return fallbackOperation3();
+            }
+
+            return "Todas las operaciones se realizaron con éxito.";
+        }
+
+        function operation1() {
+            return { success: true };  // Simula éxito
+        }
+
+        function operation2() {
+            return { success: false };  // Simula un fallo
+        }
+
+        function operation3() {
+            return { success: true };  // Simula éxito
+        }
+
+        function fallbackOperation1() {
+            return "Fallback de la Operación 1 realizado.";
+        }
+
+        function fallbackOperation2() {
+            return "Fallback de la Operación 2 realizado.";
+        }
+
+        function fallbackOperation3() {
+            return "Fallback de la Operación 3 realizado.";
+        }
+
+        document.getElementById('flowControlResult').textContent = performOperations();
+    </script>
+</body>
+</html>

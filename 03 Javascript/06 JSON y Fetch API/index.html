@@ -1,131 +1,184 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JSON y Fetch API en JavaScript</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Introducción a JSON y Fetch API</h1>
-    <p>Este archivo muestra ejemplos y explicaciones sobre JSON y cómo utilizar la Fetch API en JavaScript.</p>
+    <p>
+      Este archivo muestra ejemplos y explicaciones sobre JSON y cómo utilizar
+      la Fetch API en JavaScript.
+    </p>
 
     <script>
-        // 1. Introducción a JSON
-        // =======================
-        // JSON (JavaScript Object Notation) es un formato ligero de intercambio de datos.
-        // Se utiliza para enviar datos entre un servidor y una aplicación web.
-        
-        // Ejemplo de objeto JSON:
-        const personaJSON = '{"nombre": "Ana", "edad": 25}';
-        console.log("JSON de una persona:", personaJSON);
+      // 1. Introducción a JSON
+      // =======================
+      // JSON (JavaScript Object Notation) es un formato ligero de intercambio de datos.
+      // Se utiliza para enviar datos entre un servidor y una aplicación web.
 
-        // 2. Sintaxis de JSON
-        // ====================
-        // JSON se estructura en pares clave-valor, similares a los objetos en JavaScript.
-        // Los valores pueden ser cadenas, números, objetos, arrays, booleanos o nulos.
+      // Ejemplo de objeto JSON:
+      const personaJSON = '{"nombre": "Ana", "edad": 25}';
+      const persona = {
+        nombre: "Ana",
+        edad: 25,
+        calcularTamanioDelNombre: function () {
+          return this.nombre.length;
+        },
+      };
+      var edad1 = persona.edad;
+      var nombre1 = persona.nombre;
+      console.log("JSON de una persona:", personaJSON);
 
-        const personaObjeto = {
-            nombre: "Luis",
-            edad: 30,
-            direccion: {
-                ciudad: "Bogotá",
-                pais: "Colombia"
-            },
-            intereses: ["programación", "lectura"]
-        };
-        console.log("Objeto JavaScript:", personaObjeto);
+      // 2. Sintaxis de JSON
+      // ====================
+      // JSON se estructura en pares clave-valor key-value, similares a los objetos en JavaScript.
+      // Los valores pueden ser cadenas, números, objetos, arrays, booleanos o nulos.
 
-        // 3. Serialización y deserialización
-        // ===================================
-        // Serialización: Convertir un objeto JavaScript a una cadena JSON con JSON.stringify().
-        // Deserialización: Convertir una cadena JSON a un objeto JavaScript con JSON.parse().
+      const personaObjeto = {
+        nombre: "Luis",
+        edad: 30,
+        direccion: {
+          ciudad: "Bogotá",
+          pais: "Colombia",
+        },
+        intereses: ["programación", "lectura"],
+      };
+      personaObjeto.intereses["superinteres"] = "interes";
+      personaObjeto.intereses["2"] = "interes2";
+      console.log("Objeto JavaScript:", personaObjeto);
 
-        const personaString = JSON.stringify(personaObjeto);
-        console.log("Objeto serializado a JSON:", personaString);
+      // 3. Serialización y deserialización
+      // ===================================
+      // Serialización: Convertir un objeto JavaScript a una cadena JSON con JSON.stringify().
+      // Deserialización: Convertir una cadena JSON a un objeto JavaScript con JSON.parse().
 
-        const personaParsed = JSON.parse(personaString);
-        console.log("JSON deserializado a objeto:", personaParsed);
+      const personaString = JSON.stringify(personaObjeto);
+      console.log("Objeto serializado a JSON:", personaString);
 
-        // 4. Interacción con APIs
-        // =========================
-        // Las APIs permiten que las aplicaciones interactúen con otros servicios web.
-        // Generalmente, se utilizan solicitudes HTTP para obtener o enviar datos.
+      const personaParsed = JSON.parse(personaString);
+      console.log("JSON deserializado a objeto:", personaParsed);
 
-        // 5. Métodos HTTP básicos
-        // ========================
-        // - GET: Solicita datos del servidor.
-        // - POST: Envía datos al servidor.
-        // - PUT: Actualiza datos en el servidor.
-        // - DELETE: Elimina datos del servidor.
+      // 4. Interacción con APIs
+      // =========================
+      // Las APIs permiten que las aplicaciones interactúen con otros servicios web.
+      // Generalmente, se utilizan solicitudes HTTP para obtener o enviar datos.
 
-        // 6. Uso básico de Fetch API
-        // ============================
-        // La Fetch API proporciona una forma moderna de hacer solicitudes HTTP.
-        // La función fetch() devuelve una promesa que se resuelve en la respuesta.
+      // 5. Métodos HTTP básicos
+      // ========================
+      // - GET: Solicita datos del servidor.
+      // - POST: Envía datos al servidor.
+      // - PUT: Actualiza datos en el servidor.
+      // - DELETE: Elimina datos del servidor.
 
-        fetch('https://jsonplaceholder.typicode.com/posts/1') // Ejemplo de solicitud GET
-            .then(response => response.json()) // Convierte la respuesta a JSON
-            .then(data => {
-                console.log("Datos obtenidos con Fetch:", data);
-            })
-            .catch(error => {
-                console.error("Error en Fetch:", error);
-            });
+      // 6. Uso básico de Fetch API
+      // ============================
+      // La Fetch API proporciona una forma moderna de hacer solicitudes HTTP.
+      // La función fetch() devuelve una promesa que se resuelve en la respuesta.
 
-        // 7. Manejo de respuestas
-        // ========================
-        // Se puede procesar la respuesta de la Fetch API utilizando métodos como .json() y .text().
-        // Aquí, se convierte la respuesta en texto y se muestra en la consola.
+      // Ejemplo de funcion de suma
+      function suma(a, b) {
+        var retorno = a + b;
+        return retorno;
+      }
+      var resultado = suma(2, 3);
+      // Ejemplo de funcion de suma en modo funcion flecha con return
+      var suma3 = (a, b) => {
+        var retorno = a + b;
+        return retorno;
+      };
+      // Ejemplo de funcion de suma en modo funcion flecha con return
+      var suma4 = (a, b) => {
+        return a + b;
+      };
+      console.log(suma4(2, 3));
+      // Ejemplo de funcion de suma en modo funcion flecha
+      var suma2 = (a, b) => a + b;
+      var resultado2 = suma2(2, 3);
 
-        fetch('https://jsonplaceholder.typicode.com/posts/1')
-            .then(response => response.text()) // Convierte la respuesta a texto
-            .then(text => {
-                console.log("Respuesta como texto:", text);
-            });
+      persona.calcularNacimiento = function () {
+        return 2024 - this.edad;
+      };
+      persona.calcularNacimiento();
+      var tamanioMiNombre = persona.calcularTamanioDelNombre();
 
-        // 8. Manejo de errores en Fetch
-        // ==============================
-        // Es importante manejar los errores que pueden ocurrir durante la solicitud.
-        // Se puede usar .catch() para capturar errores de red o problemas de ejecución.
+      fetch("http://localhost:3010/api/datos")
+        .then((response) => response.json())
+        .then((data) => console.log("Datos obtenidos con Fetch:", data));
 
-        fetch('https://jsonplaceholder.typicode.com/posts/9999') // Solicitud a una URL inexistente
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Red no OK');
-                }
-                return response.json();
-            })
-            .then(data => {
-                console.log("Datos obtenidos:", data);
-            })
-            .catch(error => {
-                console.error("Error en Fetch:", error);
-            });
+      fetch("http://localhost:3010/api/datos")
+        .then((response) => response.json())
+        .then((data) => {
+          console.log("Datos obtenidos con Fetch:", data);
+        })
+        .catch((error) => {
+          console.error("Error en Fetch:", error);
+        });
 
-        // 9. Async/Await con Fetch
-        // ==========================
-        // Async/Await es una forma más simple y legible de trabajar con promesas.
-        // Permite escribir código asíncrono de manera más sincrónica.
+      // Función asincrónica para obtener los datos
+      async function fetchData() {
+        const response = await fetch("http://localhost:3010/api/datos");
+        const data = await response.json();
+        console.log("Datos obtenidos con Fetch:", data);
+      }
 
-        async function obtenerDatos() {
-            try {
-                let response = await fetch('https://jsonplaceholder.typicode.com/posts/1');
-                if (!response.ok) throw new Error('Red no OK');
-                let data = await response.json();
-                console.log("Datos obtenidos con Async/Await:", data);
-            } catch (error) {
-                console.error("Error en Async/Await:", error);
-            }
+      // Llamar a la función para obtener los datos
+      fetchData();
+
+      // 7. Manejo de respuestas
+      // ========================
+      // Se puede procesar la respuesta de la Fetch API utilizando métodos como .json() y .text().
+      // Aquí, se convierte la respuesta en texto y se muestra en la consola.
+
+      fetch("http://localhost:3010/api/datos")
+        .then((response) => response.text()) // Convierte la respuesta a texto
+        .then((text) => {
+          console.log("Respuesta como texto:", text);
+        });
+
+      // 8. Manejo de errores en Fetch
+      // ==============================
+      // Es importante manejar los errores que pueden ocurrir durante la solicitud.
+      // Se puede usar .catch() para capturar errores de red o problemas de ejecución.
+
+      fetch("http://localhost:3010/api/datos") // Solicitud a una URL inexistente
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Red no OK");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          console.log("Datos obtenidos:", data);
+        })
+        .catch((error) => {
+          console.error("Error en Fetch:", error);
+        });
+
+      // 9. Async/Await con Fetch
+      // ==========================
+      // Async/Await es una forma más simple y legible de trabajar con promesas.
+      // Permite escribir código asíncrono de manera más sincrónica.
+
+      async function obtenerDatos() {
+        try {
+          let response = await fetch("http://localhost:3010/api/datos");
+          if (!response.ok) throw new Error("Red no OK");
+          let data = await response.json();
+          console.log("Datos obtenidos con Async/Await:", data);
+        } catch (error) {
+          console.error("Error en Async/Await:", error);
         }
-        obtenerDatos();
+      }
+      obtenerDatos();
 
-        // 10. CORS y problemas comunes
-        // ==============================
-        // CORS (Cross-Origin Resource Sharing) es una política de seguridad que restringe cómo los recursos en un servidor pueden ser solicitados desde otro dominio.
-        // Los problemas comunes incluyen errores de política de origen cruzado que se deben resolver configurando los encabezados en el servidor o utilizando proxies.
+      // 10. CORS y problemas comunes
+      // ==============================
+      // CORS (Cross-Origin Resource Sharing) es una política de seguridad que restringe cómo los recursos en un servidor pueden ser solicitados desde otro dominio.
+      // Los problemas comunes incluyen errores de política de origen cruzado que se deben resolver configurando los encabezados en el servidor o utilizando proxies.
 
-        // Nota: Los problemas de CORS deben ser manejados en el servidor. Aquí solo mostramos un ejemplo básico.
-
+      // Nota: Los problemas de CORS deben ser manejados en el servidor. Aquí solo mostramos un ejemplo básico.
     </script>
-</body>
+  </body>
 </html>

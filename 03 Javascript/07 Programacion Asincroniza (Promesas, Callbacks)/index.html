@@ -1,203 +1,259 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Programación Asíncrona en JavaScript</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Introducción a la Programación Asíncrona en JavaScript</h1>
-    <p>Este archivo muestra ejemplos y explicaciones sobre los conceptos clave de la programación asíncrona en JavaScript.</p>
+    <p>
+      Este archivo muestra ejemplos y explicaciones sobre los conceptos clave de
+      la programación asíncrona en JavaScript.
+    </p>
 
     <script>
-        // 1. Conceptos de sincronía y asincronía
-        // =======================================
-        // Sincronía: Las operaciones se ejecutan una después de otra.
-        // Asincronía: Las operaciones pueden ejecutarse en paralelo, permitiendo que el programa no se detenga mientras espera.
+      // 1. Conceptos de sincronía y asincronía
+      // =======================================
+      // Sincronía: Las operaciones se ejecutan una después de otra.
+      // Asincronía: Las operaciones pueden ejecutarse en paralelo, permitiendo que el programa no se detenga mientras espera.
 
-        console.log("Inicio de la ejecución");
+      console.log("Inicio de la ejecución");
 
+      setTimeout(() => {
+        console.log("Ejecutado después de 2 segundos");
+      }, 2000);
+
+      console.log("Fin de la ejecución");
+
+      console.log("Inicio ejecución");
+      var mostrarMensaje = () => {
+        console.log("Mensaje mostrado después de 4 segundos");
+      };
+
+      setTimeout(mostrarMensaje, 4000);
+
+      console.log("Fin ejecución");
+
+      // 2. Callbacks
+      // =============
+      // Los callbacks o llamadas de retorno simplemente son funciones que se pasan como argumentos
+      // a otras funciones y se ejecutan después de que se completa una tarea.
+      function tareaAsincrona(llamadaDeRetorno) {
+        setTimeout(llamadaDeRetorno, 1000);
+      }
+
+      var mifuncionaenviar = () => {
+        console.log("ejecutado");
+      };
+      var mifuncionaenviar2 = () => {
+        console.log("realizado2");
+      };
+      tareaAsincrona(mifuncionaenviar);
+      tareaAsincrona(mifuncionaenviar2);
+
+      // 3. Problemas de Callback Hell
+      // =============================
+      // Callback Hell ocurre cuando se anidan muchos callbacks, haciendo que el código sea difícil de leer y mantener.
+      // Estrategia para evitarlo: usar Promesas o Async/Await.
+
+      // Ejemplo de Callback Hell:
+      /*
+      function tarea1(callback) {
         setTimeout(() => {
-            console.log("Ejecutado después de 2 segundos");
-        }, 2000);
+          console.log("Tarea 1 completada");
+          callback();
+        }, 1000);
+      }
 
-        console.log("Fin de la ejecución");
+      function tarea2(callback) {
+        setTimeout(() => {
+          console.log("Tarea 2 completada");
+          callback();
+        }, 1000);
+      }
 
-        // 2. Callbacks
-        // =============
-        // Los callbacks son funciones que se pasan como argumentos a otras funciones y se ejecutan después de que se completa una tarea.
+      function tarea3(callback) {
+        setTimeout(() => {
+          console.log("Tarea 3 completada");
+          callback();
+        }, 1000);
+      }
 
-        function tareaAsincrona(callback) {
-            setTimeout(() => {
-                console.log("Tarea completada");
-                callback(); // Ejecuta el callback después de la tarea
-            }, 1000);
-        }
+      tarea1(() => {
+        tarea2(() => {
+          tarea3(() => {
+            console.log("Todas las tareas completadas");
+          });
+        });
+      });
 
-        tareaAsincrona(() => {
-            console.log("Callback ejecutado");
+      // Función que retorna una promesa para cada tarea
+
+      // Función async para ejecutar las tareas en orden
+      async function ejecutarTareas() {
+        await tarea1(); // Espera a que tarea1 se complete
+        await tarea2(); // Luego espera a que tarea2 se complete
+        await tarea3(); // Finalmente, espera a que tarea3 se complete
+        console.log("Todas las tareas completadas"); // Mensaje final
+      }
+
+      // Llamar a la función async para empezar
+      ejecutarTareas();
+      */
+      // 4. Introducción a Promesas
+      // ============================
+      // Las Promesas representan la eventual finalización (o falla) de una operación asíncrona.
+      // Se crean con el constructor `Promise` y se resuelven con `resolve` o `reject`.
+
+      const miPromesa = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve("Promesa resuelta");
+        }, 1500);
+      });
+
+      async function manejarPromesa() {
+        const mensaje = await miPromesa; // Espera a que miPromesa se resuelva
+        console.log(mensaje); // Imprime el mensaje si la promesa se resuelve exitosamente
+      }
+      // Llamar a la función async para manejar la promesa
+      manejarPromesa();
+
+      // 5. Encadenamiento de Promesas
+      // ==============================
+      // Puedes encadenar varias promesas para manejar flujos asíncronos de manera más clara.
+
+      function promesa1() {
+        var mipromesa = new Promise((resolve) => {
+          setTimeout(() => resolve("Primera promesa completada"), 1000);
+        });
+        return mipromesa;
+      }
+
+      function promesa2() {
+        var mipromesa_2 = new Promise((resolve) => {
+          setTimeout(() => resolve("Segunda promesa completada"), 1000);
+        });
+        return mipromesa_2;
+      }
+
+      // Llamamos a la función promesa1(), que devuelve una promesa.
+      // La promesa se resolverá después de un segundo con el mensaje "Primera promesa completada".
+      promesa1()
+        // .then() se usa para manejar el resultado cuando la promesa se resuelve.
+        .then((resultado1) => {
+          // Aquí, resultado1 es el valor devuelto por promesa1().
+          // Imprimimos este valor en la consola para verlo.
+          console.log(resultado1);
+
+          // Después de imprimir resultado1, devolvemos otra promesa: promesa2().
+          // Esto es para encadenar la ejecución de la siguiente promesa.
+          return promesa2();
+        })
+        // .then() se usa nuevamente para manejar el resultado de promesa2().
+        .then((resultado2) => {
+          // Aquí, resultado2 es el valor devuelto por promesa2().
+          // Imprimimos este valor en la consola para verlo.
+          console.log(resultado2);
         });
 
-        // 3. Problemas de Callback Hell
-        // =============================
-        // Callback Hell ocurre cuando se anidan muchos callbacks, haciendo que el código sea difícil de leer y mantener.
-        // Estrategia para evitarlo: usar Promesas o Async/Await.
+      async function ejecutarPromesas() {
+        // Espera a que la primera promesa se resuelva
+        const resultado1 = await promesa1();
+        console.log(resultado1);
+        // Espera a que la segunda promesa se resuelva
+        const resultado2 = await promesa2();
+        console.log(resultado2);
+      }
 
-        // Ejemplo de Callback Hell:
-        function tarea1(callback) {
-            setTimeout(() => {
-                console.log("Tarea 1 completada");
-                callback();
-            }, 1000);
-        }
+      // Llama a la función async para ejecutar las promesas
+      ejecutarPromesas();
 
-        function tarea2(callback) {
-            setTimeout(() => {
-                console.log("Tarea 2 completada");
-                callback();
-            }, 1000);
-        }
+      // 6. Manejo de errores en Promesas
+      // ==================================
+      // Usa .catch() para capturar errores en las promesas.
 
-        function tarea3(callback) {
-            setTimeout(() => {
-                console.log("Tarea 3 completada");
-                callback();
-            }, 1000);
-        }
+      const promesaConError = new Promise((_, reject) => {
+        setTimeout(() => reject("Error en la promesa"), 1000);
+      });
 
-        tarea1(() => {
-            tarea2(() => {
-                tarea3(() => {
-                    console.log("Todas las tareas completadas");
-                });
-            });
+      promesaConError
+        .then((mensaje) => {
+          console.log(mensaje);
+        })
+        .catch((error) => {
+          console.error("Capturado con .catch():", error);
         });
 
-        // 4. Introducción a Promesas
-        // ============================
-        // Las Promesas representan la eventual finalización (o falla) de una operación asíncrona.
-        // Se crean con el constructor `Promise` y se resuelven con `resolve` o `reject`.
+      // 7. Async/Await
+      // ===============
+      // Async/Await es una forma más sencilla de trabajar con promesas, haciendo que el código asíncrono se vea más como el código síncrono.
 
-        const miPromesa = new Promise((resolve, reject) => {
-            setTimeout(() => {
-                resolve("Promesa resuelta");
-            }, 1500);
-        });
-
-        miPromesa.then((mensaje) => {
-            console.log(mensaje);
-        }).catch((error) => {
-            console.error("Error en la promesa:", error);
-        });
-
-        // 5. Encadenamiento de Promesas
-        // ==============================
-        // Puedes encadenar varias promesas para manejar flujos asíncronos de manera más clara.
-
-        function promesa1() {
-            return new Promise((resolve) => {
-                setTimeout(() => resolve("Primera promesa completada"), 1000);
-            });
+      async function tareaAsincronaAsync() {
+        try {
+          var mypromesa = new Promise((resolve) => {
+            setTimeout(() => resolve("Resultado de Async/Await"), 1000);
+          });
+          const resultado = await mypromesa;
+          console.log(resultado);
+        } catch (error) {
+          console.error("Error con Async/Await:", error);
         }
+      }
 
-        function promesa2() {
-            return new Promise((resolve) => {
-                setTimeout(() => resolve("Segunda promesa completada"), 1000);
-            });
+      tareaAsincronaAsync();
+
+      // 8. Manejo de múltiples Promesas
+      // ===============================
+      // Promise.all y Promise.race te permiten manejar múltiples promesas.
+
+      const promesa1 = new Promise((resolve) =>
+        setTimeout(() => resolve("Promesa 1"), 1000)
+      );
+      const promesa2 = new Promise((resolve) =>
+        setTimeout(() => resolve("Promesa 2"), 2000)
+      );
+
+      // Promise.all espera a que todas las promesas se resuelvan
+      var arrayDePromesas = [promesa1, promesa2];
+      Promise.all(arrayDePromesas).then((resultados) => {
+        console.log("Resultados de Promise.all:", resultados);
+      });
+
+      // Promise.race devuelve la primera promesa que se resuelve o rechaza
+      Promise.race([promesa1, promesa2]).then((resultado) => {
+        console.log("Resultado de Promise.race:", resultado);
+      });
+
+      // 9. Funciones asíncronas
+      // ========================
+      // Las funciones asíncronas se definen con `async` y devuelven una promesa.
+
+      async function funcionAsincrona() {
+        return "Resultado de función asíncrona";
+      }
+
+      funcionAsincrona().then((resultado) => {
+        console.log(resultado);
+      });
+
+      // 10. Optimización y rendimiento
+      // ================================
+      // Mejora la eficiencia del código asíncrono utilizando técnicas como el encadenamiento de promesas,
+      // manejando errores de manera adecuada y evitando el Callback Hell.
+
+      // Ejemplo optimizado para evitar Callback Hell y errores:
+      async function tareasOptimizada() {
+        try {
+          const resultado1 = await promesa1();
+          console.log(resultado1);
+          const resultado2 = await promesa2();
+          console.log(resultado2);
+        } catch (error) {
+          console.error("Error en tareas optimizadas:", error);
         }
-
-        promesa1()
-            .then(resultado1 => {
-                console.log(resultado1);
-                return promesa2();
-            })
-            .then(resultado2 => {
-                console.log(resultado2);
-            });
-
-        // 6. Manejo de errores en Promesas
-        // ==================================
-        // Usa .catch() para capturar errores en las promesas.
-
-        const promesaConError = new Promise((_, reject) => {
-            setTimeout(() => reject("Error en la promesa"), 1000);
-        });
-
-        promesaConError
-            .then((mensaje) => {
-                console.log(mensaje);
-            })
-            .catch((error) => {
-                console.error("Capturado con .catch():", error);
-            });
-
-        // 7. Async/Await
-        // ===============
-        // Async/Await es una forma más sencilla de trabajar con promesas, haciendo que el código asíncrono se vea más como el código síncrono.
-
-        async function tareaAsincronaAsync() {
-            try {
-                const resultado = await new Promise((resolve) => {
-                    setTimeout(() => resolve("Resultado de Async/Await"), 1000);
-                });
-                console.log(resultado);
-            } catch (error) {
-                console.error("Error con Async/Await:", error);
-            }
-        }
-
-        tareaAsincronaAsync();
-
-        // 8. Manejo de múltiples Promesas
-        // ===============================
-        // Promise.all y Promise.race te permiten manejar múltiples promesas.
-
-        const promesa1 = new Promise((resolve) => setTimeout(() => resolve("Promesa 1"), 1000));
-        const promesa2 = new Promise((resolve) => setTimeout(() => resolve("Promesa 2"), 2000));
-
-        // Promise.all espera a que todas las promesas se resuelvan
-        Promise.all([promesa1, promesa2])
-            .then(resultados => {
-                console.log("Resultados de Promise.all:", resultados);
-            });
-
-        // Promise.race devuelve la primera promesa que se resuelve o rechaza
-        Promise.race([promesa1, promesa2])
-            .then(resultado => {
-                console.log("Resultado de Promise.race:", resultado);
-            });
-
-        // 9. Funciones asíncronas
-        // ========================
-        // Las funciones asíncronas se definen con `async` y devuelven una promesa.
-
-        async function funcionAsincrona() {
-            return "Resultado de función asíncrona";
-        }
-
-        funcionAsincrona().then((resultado) => {
-            console.log(resultado);
-        });
-
-        // 10. Optimización y rendimiento
-        // ================================
-        // Mejora la eficiencia del código asíncrono utilizando técnicas como el encadenamiento de promesas, 
-        // manejando errores de manera adecuada y evitando el Callback Hell.
-
-        // Ejemplo optimizado para evitar Callback Hell y errores:
-        async function tareasOptimizada() {
-            try {
-                const resultado1 = await promesa1();
-                console.log(resultado1);
-                const resultado2 = await promesa2();
-                console.log(resultado2);
-            } catch (error) {
-                console.error("Error en tareas optimizadas:", error);
-            }
-        }
-
-        tareasOptimizada();
-
+      }
+      tareasOptimizada();
     </script>
-</body>
+  </body>
 </html>

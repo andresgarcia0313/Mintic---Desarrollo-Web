@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Título de tu página</title>
+  </head>
+  <body>
+    <h1>¡Hola, mundo!</h1>
+    <script>
+      // Aquí va el código de JavaScript de ejemplo de try catch para dividir por cero en una función y que quede claro el try catch
+      function dividir(a, b) {
+        console.log("Dividiendo", a, "entre", b);
+        try {
+          var resultado = a / b;
+          console.log("El resultado es", resultado);
+          return a / b;
+        } catch (error) {
+          console.error(error);
+        }
+      }
+      dividir(10, 0);
+    </script>
+  </body>
+</html>
